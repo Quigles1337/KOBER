@@ -15,7 +15,7 @@
 | R0 enumerated with provenance (P0.3) | open | — |
 | Informal uniqueness theorem stated in CLAIMS (P0.4) | open | — |
 | Repo scaffolded and green (P0.5: Lean project, Rust workspace, ADR-0001 toolchain pin, CI decision) | open | — |
-| SOURCES.md has license notes for every data source touched | open | — |
+| SOURCES.md has license notes for every data source touched | in progress | S-0001 ingested with license (CC BY-NC-ND 4.0). P0.6 survey done: S-0002 GORILA (print, (c) EFA), S-0003 Younger (host dead, license UNKNOWN), S-0004 SigLA (live, CC BY-NC-SA 4.0), S-0005 lineara.xyz (live, license UNKNOWN) |
 | Cold-start test (§2) | open | — |
 
 ## Blockers
