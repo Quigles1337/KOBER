@@ -13,7 +13,7 @@
 |---|---|---|
 | CLAIM-0001 resolved to VERIFIED (P0.1) | **done** | CLAIMS.md CLAIM-0001 transition 2026-08-22; SOURCES.md S-0001 (stored PDF + Crossref record with SHA-256s) |
 | R0 enumerated with provenance (P0.3) | open | — |
-| Informal uniqueness theorem stated in CLAIMS (P0.4) | open | — |
+| Informal uniqueness theorem stated in CLAIMS (P0.4) | open — **P0.2 prerequisite done** | Extraction `analysis/P0.2-constraint-system.md`; CLAIM-0002 (the paper claims optimality-characterization, NOT uniqueness — E3 anchor: scope P0.4 accordingly) |
 | Repo scaffolded and green (P0.5: Lean project, Rust workspace, ADR-0001 toolchain pin, CI decision) | open | — |
 | SOURCES.md has license notes for every data source touched | in progress | S-0001 ingested with license (CC BY-NC-ND 4.0). P0.6 survey done: S-0002 GORILA (print, (c) EFA), S-0003 Younger (host dead, license UNKNOWN), S-0004 SigLA (live, CC BY-NC-SA 4.0), S-0005 lineara.xyz (live, license UNKNOWN) |
 | Cold-start test (§2) | open | — |

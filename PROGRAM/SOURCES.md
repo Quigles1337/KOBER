@@ -42,9 +42,14 @@ entry here.
 - **Verification notes:** byte-level grep of the stored PDF shows the DOI, the full title,
   "Journal of Archaeological Science", author-name strings (Corazza, Valério), the keyword block
   "Fraction signs, Constraint programming, Numerical notations", and the CC BY-NC-ND license URL.
-  Page-level rendering is not yet possible on this machine (`pdftoppm`/poppler absent), so a visual
-  read of the title page is pending P0.2 tooling; the `file` utility's "1 page(s)" readout on this
-  PDF is a linearized-PDF heuristic artifact, not a page count.
+  ~~Page-level rendering is not yet possible on this machine~~ **Resolved 2026-08-22 (Session
+  2):** poppler 26.02.0 installed at `C:\Users\LEET\tools\poppler-26.02.0` (and added to user
+  PATH); `pdfinfo` confirms **14 pages** and reproduces title/DOI/keywords from the PDF
+  dictionary. The `file` utility's "1 page(s)" readout was a linearized-PDF heuristic artifact,
+  as suspected. Full text extracted and all pages rendered; page-anchored extraction lives at
+  `analysis/P0.2-constraint-system.md`. **Note for replication:** the PDF references no
+  supplementary code or data anywhere; MiniZinc + Gecode are named (p. 4) but the model must be
+  reconstructed from prose.
 
 ---
 
