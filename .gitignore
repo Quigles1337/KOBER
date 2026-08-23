@@ -1,6 +1,6 @@
-# Lean (P0.5+)
-/.lake/
-# Rust (P0.5+)
+# Lean (build dir lives under lean/)
+.lake/
+# Rust (workspace target at root)
 /target/
 # OS noise
 Thumbs.db

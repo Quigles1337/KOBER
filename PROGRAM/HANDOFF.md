@@ -64,3 +64,59 @@ STOP-REASON: natural boundary — bootstrap + P0.1 + P0.6 complete, default bran
   commit; P0.2 (deep read of the paper) deserves a fresh session with extraction tooling in
   place.
 ```
+
+---
+
+```
+SESSION: 2026-08-22 @ dfcb8de + scaffold commit (Session 2; the commit adding this entry lands
+  on top)
+PHASE / GATE: Phase 0 — FOUNDATION; Gate G0 open. Now done: CLAIM-0001 (S1), P0.2 extraction,
+  P0.5 scaffold. Remaining for G0: P0.3 (R0), P0.4 (informal theorem), cold-start test.
+ADVANCED:
+- P0.2 (dfcb8de): full extraction of the constraint system into
+  analysis/P0.2-constraint-system.md — 6 constraints (verbatim), 12 CP variables, 36-value
+  candidate set, 4 goodness measures with the Tables-6/7 worked-example semantics, complete
+  document roster with roles/exclusions, Simulation counts. CLAIM-0002 created VERIFIED.
+- P0.5 (this commit): Lean project lean/ pinned v4.33.1 no-Mathlib (ADR-0001), Rust workspace
+  engine/ pinned 1.91.0 edition-2024 (ADR-0002), scripts/check.sh local gate; first run ALL
+  GREEN (lake build + 1/1 cargo test + clippy -D warnings).
+BELIEF DELTAS:
+- THE BIG ONE (E3): the paper does NOT claim uniqueness. Constraints 1–6 alone admit 3,794,740
+  solutions ("severely underconstrained", p. 6); the headline values are a conditional
+  optimality characterization (p. 8 "simple hypothesis"), with H = 1/16, A = 1/24 explicitly
+  "tentative". P0.4 must be scoped as solution-set/optimum characterization, never
+  "constraints force unique values". Evidence: extraction §0/§7.
+- The paper ships NO code or data supplement; MiniZinc + Gecode named but the model must be
+  rebuilt from prose. Three genuine model ambiguities recorded (A-1 L-series domain, A-2 soft
+  bounds, A-3 G_Optimal denominator grid) plus six internal-text observations (OBS-1..6,
+  incl. Table 4's J=138 vs 137 elsewhere, and a ≤/≥ tension at p. 8). These make the published
+  counts (2,172,836 / 3,794,740 / 0.67094 / …) the golden targets for Phase-2 replication.
+- KH 86.2 is an editorial variant taken by the authors themselves (A A vs GORILA's A B B,
+  Table 1 caption) — first confirmed R0a/R0b axis.
+- Machine: winget source is broken (InternetOpenUrl failure) — poppler came from the
+  oschwartz10612/poppler-windows GitHub release instead, now at C:\Users\LEET\tools\
+  poppler-26.02.0 and on user PATH (future sessions can Read PDFs directly; this session used
+  absolute paths). Current Lean stable v4.33.1 was already installed; gate is fast (~30 s).
+CONFUSIONS:
+- The constitution's §P0.2 phrase "summation-line constraint system" misdescribes the paper:
+  only HT 104 is a summation; the system is six structural premises over attestation data, and
+  the paper itself says no LA totals inscription is problem-free. Cost: none (caught during
+  extraction). Doc fix: extraction §0 + §2 states this loudly; P0.4 must not import the phrase.
+- pdftotext interleaves the two-column tables; Tables 1/2/4 and Appendices B–C had to be
+  verified on page renders. Doc fix: extraction header names which tables were
+  render-verified, so successors trust the right layer.
+HONESTY CHECK: CLAIM-0001 unchanged (evidence still concordant). CLAIM-0002 written with the
+  paper's own hedges preserved (tentative H/A; underconstrainedness) rather than the stronger
+  claim a careless reading would produce. Extraction separates verbatim quotes from executor
+  inference throughout; OBS-1..6 are framed as replication targets, not errors asserted.
+DRIFT CHECK: clean. Everything this session is about mathematical values of fraction signs and
+  infrastructure — zero sound-value content. The §7 logical-form analysis exists precisely to
+  keep P1 from overclaiming.
+NEXT-SINGLE-ACTION: (see STATE.md — P0.3, enumerate R0 with per-document provenance, damage
+  flags, and explicit R0a/R0b variants, starting from extraction §1.)
+ESCALATIONS:
+- Remote hosting still open (ADR-0000; STATE standing escalation). CI wiring waits on it
+  (ADR-0002).
+STOP-REASON: natural boundary — extraction + scaffold complete, gate ALL GREEN; P0.3 is a
+  fresh-session scholarship task.
+```
