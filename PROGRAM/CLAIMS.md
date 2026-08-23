@@ -61,3 +61,83 @@ transition line. Transitions require evidence. Downgrades are always permitted a
 - **Axiom print:** n/a (not a formal claim)
 - **Transitions:**
   - 2026-08-22 (Session 2) — created VERIFIED with retrieval-extraction evidence (P0.2).
+
+---
+
+## CLAIM-0003 — identity and provenance of reading set R0
+
+- **Informal statement:** `analysis/R0.md` faithfully enumerates the reading set the S-0001
+  constraint system depends on: the aggregate attestation matrix (Tables 1–2 as published,
+  with the honest limitation that S-0001 does not decompose it per inscription), the ~26
+  individually named readings with the paper's damage notation preserved verbatim, the edition
+  attributions as cited by S-0001 (GORILA vols. 1/3/5 + later publications; vols. 2/4 never
+  cited), and four explicit variant axes: R0a (paper-operative baseline), R0b (KH 86.2 = A B B
+  per GORILA), R0c (E J genuine → universal C5 inconsistent), R0d (PH 7b.3 = L E).
+- **Status:** VERIFIED
+- **Evidence:** `analysis/R0.md` (2026-08-22), every row page-anchored into the stored VOR
+  (S-0001); three SigLA document pages fetched as independent pointers (HT 104, KH 86,
+  ZA 11a — the last showing a possible transcription divergence on the L L2 reading, recorded
+  as unresolved in R0 §4/§6, not adjudicated).
+- **Reading-set deps:** self (this claim defines R0).
+- **Axiom print:** n/a
+- **Transitions:**
+  - 2026-08-22 (Session 3) — created VERIFIED (P0.3).
+
+---
+
+## CLAIM-0004 — [P1 target, tier 1] constraint-layer corollaries
+
+- **Informal statement:** Conditional on R0a and the formalization of Constraints 1–6 with the
+  S-0001 value domains (extraction §4–§5): every satisfying assignment obeys the bounds the
+  paper states — A < 1/2, H < 1/2, B < 1/4 (from C1 + C5), L4 < L2 < K < 1/8, L2 ≥ 3/320,
+  L-series < 1/9 — and the series ratios L2 = (3/2)·L3, L2 = 2·L4, L2 = 3·L6 (C6 with hl = 1;
+  this corrects the inverted phrasing flagged as OBS-4).
+- **Status:** UNKNOWN (proof target for P1.1–P1.2; expected first PROVEN entries)
+- **Evidence:** statement anchored to `analysis/P0.2-constraint-system.md` §4–§5, §7 form (2).
+- **Reading-set deps:** R0a (CLAIM-0003).
+- **Axiom print:** pending proof.
+- **Transitions:**
+  - 2026-08-22 (Session 3) — created UNKNOWN (P0.4 statement; E3 anchor).
+
+---
+
+## CLAIM-0005 — [P1 target, tier 2] exact solution set of the constraint layer
+
+- **Informal statement:** Conditional on R0a and on a domain reconstruction that resolves
+  extraction flags A-1–A-3 (L-series domain; soft bounds; G_Optimal grid) while reproducing the
+  paper's published counts: the solution set of Constraints 1–6 is exactly a set S with
+  |S| = 3,794,740 — in particular, **kernel-checked non-uniqueness of the constraint layer**
+  (the anti-claim that makes the falsification story precise). If no reasonable disambiguation
+  reproduces the published count, the discrepancy itself becomes the registered result
+  (downgrade path prepared in advance).
+- **Status:** UNKNOWN (requires Phase-2 replication to fix the model, then P1 certification)
+- **Evidence:** statement anchored to extraction §5–§6, §7 form (1); golden targets listed in
+  extraction §9.
+- **Reading-set deps:** R0a; variant-sensitivity vs R0b predicted nil at this layer (R0 §5,
+  executor inference — must be machine-checked, P1.3).
+- **Axiom print:** pending proof.
+- **Transitions:**
+  - 2026-08-22 (Session 3) — created UNKNOWN (P0.4 statement).
+
+---
+
+## CLAIM-0006 — [P1 target, tier 3] optimum characterization (the paper's "simple hypothesis")
+
+- **Informal statement:** Conditional on R0a, the reconstructed domains, and the four goodness
+  measures exactly as defined in S-0001 (G_FreqVSDiv, G_AmbCombs, G_Typ, the MULT top-5000
+  filter, G_Optimal): the G_Optimal minimizers carry exactly J = 1/2, E = 1/4, F = 1/8,
+  B = 1/5, D = 1/6, K = 1/10, L2 = 1/20, L3 = 1/30, L4 = 1/40, L6 = 1/60, with H and A
+  underdetermined precisely as published (H ∈ {1/16, 1/24, 1/32, 1/36, 1/48, 1/64, 1/72,
+  1/84}, A ∈ {1/24, 1/32, 1/36, 1/48, 1/64, 1/72, 1/84} among the 28 best). This — not
+  "uniqueness from constraints" — is the theorem the paper's claim actually supports (E3;
+  extraction §0/§7). The paper's tentative H = 1/16, A = 1/24 preference is palaeographic/
+  structural and is NOT part of this formal target.
+- **Status:** UNKNOWN (the anchor deliverable; depends on CLAIM-0005's model fixation)
+- **Evidence:** statement anchored to extraction §6–§7 (verbatim claim quoted there from
+  S-0001 p. 8).
+- **Reading-set deps:** R0a; R0b touches the measure layer (G_AmbCombs, the A A argument) —
+  variant-conditional proof required by P1.3.
+- **Axiom print:** pending proof.
+- **Transitions:**
+  - 2026-08-22 (Session 3) — created UNKNOWN (P0.4 statement; completes the G0 "informal
+    theorem stated" criterion together with CLAIM-0004/0005).

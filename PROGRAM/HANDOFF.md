@@ -120,3 +120,60 @@ ESCALATIONS:
 STOP-REASON: natural boundary — extraction + scaffold complete, gate ALL GREEN; P0.3 is a
   fresh-session scholarship task.
 ```
+
+---
+
+```
+SESSION: 2026-08-22 @ 06beff9 + this commit (Session 3)
+PHASE / GATE: Phase 0 — FOUNDATION; Gate G0 open, remaining: cold-start test ONLY (by design a
+  fresh session runs it — see NEXT-SINGLE-ACTION).
+ADVANCED:
+- Remote wired (70525f9): Al created github.com/Quigles1337/KOBER (PUBLIC, was empty) — the
+  ADR-0000 standing escalation is RESOLVED (addendum written). origin/master pushed with full
+  history intact; content audited pre-push (no secrets; S-0001 PDF redistribution compliant
+  under CC BY-NC-ND with SOURCES.md attribution).
+- CI wired per ADR-0002's activation clause (70525f9) and fixed (06beff9): run 1 failed in 9 s
+  for a REAL reason (all 10 steps executed — NOT the machine's billing signature): the elan
+  shim resolves lean-toolchain from cwd, and `lake --dir` from repo root found none. Gate now
+  cds into lean/ and prints the resolved Lean version. Run 2: SUCCESS in 44 s
+  (run 32609707013). E9 now enforced locally and in CI.
+- P0.3 (this commit): analysis/R0.md — R0-agg + R0-named (~26 documents, damage notation
+  verbatim, editions as cited by S-0001) + variants R0a/R0b/R0c/R0d with consequence analyses.
+  CLAIM-0003 VERIFIED.
+- P0.4 (this commit): three-tier informal theorem statements — CLAIM-0004 (constraint-layer
+  corollaries), CLAIM-0005 (exact solution set, |S| = 3,794,740 = kernel-checked
+  NON-uniqueness), CLAIM-0006 (optimum characterization = the paper's actual claim). All
+  UNKNOWN = P1 targets; "uniqueness from constraints" deliberately not claimed anywhere.
+BELIEF DELTAS:
+- The repo is PUBLIC (Al's owner decision at creation). Program consequence: none for content
+  discipline (nothing secret was ever committed), but P4.3's packaging/announcement escalation
+  still stands.
+- elan toolchain resolution is cwd-anchored; `lake --dir` does NOT anchor it. Evidence: CI run
+  1 log ("no default toolchain configured") vs run 2 green after the cd fix. The gate printing
+  `lean --version` is now the standing proof the pin is what actually runs.
+- SigLA addresses documents as https://sigla.phis.me/document/<ID with space>/ — verified for
+  HT 104, KH 86, ZA 11a. KH 86 lists fractions as GORILA-style numbers (A701/702/704/707):
+  the letter↔A7xx concordance is a P2.2 prerequisite. ZA 11a's SigLA sign list showed NO
+  fraction signs while the paper (via GORILA) reads L L2 at ZA 11a.4 — first live specimen of
+  transcription-source divergence, recorded UNRESOLVED in R0 §4/§6. Do not repeat it as a
+  finding; it is a to-adjudicate.
+- The 9-second CI failure had 10 executed steps — the billing gotcha (0-step jobs) did NOT
+  recur. Lesson: check step counts before pattern-matching to billing.
+CONFUSIONS:
+- I assumed `lake --dir` was equivalent to running in the project dir. It is for lake's own
+  build, but NOT for elan's toolchain resolution. Cost: one red CI run. Doc fix: comment in
+  scripts/check.sh + this entry.
+HONESTY CHECK: CLAIM-0005 carries its own downgrade path in the statement (if no reasonable
+  domain disambiguation reproduces the published count, the discrepancy is the registered
+  result). R0b's "solution set unchanged" prediction is labeled executor-inference with the
+  domain argument sketched, awaiting machine check (P1.3). ZA 11a recorded as unresolved
+  tension, not as "SigLA contradicts GORILA".
+DRIFT CHECK: clean. R0 and the claim tiers are values-and-structure only; CLAIM-0006 exists
+  precisely to pin the formal target to what the paper supports and no more.
+NEXT-SINGLE-ACTION: (see STATE.md — the cold-start test, first act of the next fresh session;
+  on pass: close G0, open Phase 1 at P1.1.)
+ESCALATIONS: none open. (Remote resolved this session; publication packaging remains a future
+  P4.3 escalation by rule.)
+STOP-REASON: natural boundary — G0's sole remaining criterion is, by its own definition, a task
+  for a cold successor. Repo green locally and in CI.
+```
