@@ -1,0 +1,40 @@
+# KOBER gate in CI (ADR-0002): wraps scripts/check.sh, the same gate E9 means locally.
+# Never configure this as a *required* status check without confirming Actions can run
+# (machine history: billing suspensions produce 0-step failed jobs that look like red builds).
+name: check
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache elan + Lean toolchain
+        uses: actions/cache@v4
+        with:
+          path: ~/.elan
+          key: elan-${{ runner.os }}-${{ hashFiles('lean/lean-toolchain') }}
+
+      - name: Install elan (toolchain resolved from lean/lean-toolchain)
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf \
+              | sh -s -- -y --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Cache cargo registry and target
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            target
+          key: cargo-${{ runner.os }}-${{ hashFiles('Cargo.lock', 'rust-toolchain.toml') }}
+
+      - name: Gate (lake build + cargo test + clippy -D warnings)
+        run: bash scripts/check.sh

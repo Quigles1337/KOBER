@@ -3,7 +3,8 @@
 - **Updated:** 2026-08-22 (Session 2, close)
 - **Phase:** 0 — FOUNDATION
 - **Gate:** G0 (open; remaining: P0.3, P0.4, cold-start test)
-- **Default branch:** `master` (discovered via `git symbolic-ref HEAD` at init; no remote exists)
+- **Default branch:** `master`. Remote: `origin` = `https://github.com/Quigles1337/KOBER`
+  (**public**; created by Al, wired Session 3; CI = `.github/workflows/check.yml`)
 - **Build status:** "green" = `scripts/check.sh` passes (lake build on Lean v4.33.1 + cargo test +
   clippy at deny-warnings; ADR-0002). Last verified: 2026-08-22, ALL GREEN.
 
@@ -24,9 +25,9 @@
 
 ## Standing escalations (awaiting Al)
 
-- **Remote hosting.** Repo is local-only at `C:\Users\LEET\KOBER`. Creating a GitHub remote is an
-  account action → Al's call (§4.6, ADR-0000). Suggested default if approved: private repo, never
-  public without the §4.6 publication escalation.
+- none open. (Remote hosting: **resolved 2026-08-22** — Al created
+  `https://github.com/Quigles1337/KOBER`, public; see ADR-0000 addendum. Publication
+  *packaging/announcement* remains gated at P4.3 regardless of repo visibility.)
 
 ## NEXT-SINGLE-ACTION
 
