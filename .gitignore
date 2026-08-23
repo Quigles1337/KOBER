@@ -1,0 +1,7 @@
+# Lean (P0.5+)
+/.lake/
+# Rust (P0.5+)
+/target/
+# OS noise
+Thumbs.db
+Desktop.ini
