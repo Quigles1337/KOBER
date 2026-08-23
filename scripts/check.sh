@@ -4,7 +4,9 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 echo "== lake build (lean/) =="
-lake --dir="$ROOT/lean" build
+# cd so the elan shim resolves the toolchain from lean/lean-toolchain (E7: the pin,
+# never a machine default — CI has no default and fails loudly otherwise).
+( cd "$ROOT/lean" && lean --version && lake build )
 echo "== cargo test =="
 cargo test --manifest-path "$ROOT/Cargo.toml" --workspace
 echo "== cargo clippy (deny warnings) =="
