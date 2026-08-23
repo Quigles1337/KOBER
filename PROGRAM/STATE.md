@@ -1,6 +1,6 @@
 # STATE
 
-- **Updated:** 2026-08-22 (Session 1, bootstrap)
+- **Updated:** 2026-08-22 (Session 1, close)
 - **Phase:** 0 — FOUNDATION
 - **Gate:** G0 (open)
 - **Default branch:** `master` (discovered via `git symbolic-ref HEAD` at init; no remote exists)
@@ -30,6 +30,12 @@
 
 ## NEXT-SINGLE-ACTION
 
-P0.1 — Retrieve and verify the 2021 fraction-values paper: resolve CLAIM-0001 (authors, title,
-venue, year, DOI, all from retrieved sources, none from memory — E5); record it as S-0001 in
-SOURCES.md with URL, access date, license terms, and SHA-256 of any stored copy.
+P0.2 — Extract the constraint system from the stored version of record
+(`sources/corazza-etal-2021-jas-105214.pdf`, SHA-256 in S-0001): enumerate (a) the
+tablets/documents used, (b) the summation lines, (c) the fraction-sign inventory, (d) the
+candidate value assignments considered, (e) the exact uniqueness/optimality claim *as the authors
+state it* — into `analysis/P0.2-constraint-system.md` with page-anchored quotes; then seed the
+corresponding informal-claim entry in CLAIMS.md (this feeds P0.4). Tooling prerequisite discovered
+in Session 1: poppler is NOT installed (`pdftoppm` missing), so the Read tool cannot render PDF
+pages — first install poppler (winget/choco/scoop) or use Python + pypdf for text extraction, and
+sanity-check the extraction against the byte-grep facts recorded in S-0001.
