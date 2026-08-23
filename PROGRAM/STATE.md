@@ -11,7 +11,7 @@
 
 | Criterion | Status | Evidence |
 |---|---|---|
-| CLAIM-0001 resolved to VERIFIED (P0.1) | open | — |
+| CLAIM-0001 resolved to VERIFIED (P0.1) | **done** | CLAIMS.md CLAIM-0001 transition 2026-08-22; SOURCES.md S-0001 (stored PDF + Crossref record with SHA-256s) |
 | R0 enumerated with provenance (P0.3) | open | — |
 | Informal uniqueness theorem stated in CLAIMS (P0.4) | open | — |
 | Repo scaffolded and green (P0.5: Lean project, Rust workspace, ADR-0001 toolchain pin, CI decision) | open | — |
