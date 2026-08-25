@@ -240,3 +240,96 @@ STOP-REASON: gate reached (G0 CLOSED) — §4.6 stop condition. Repo green local
   commit; its CI run is checked at the next ORIENT (STATE's CI line lags by one run, by
   construction).
 ```
+
+---
+
+```
+SESSION: 2026-08-25 @ 0e1ac18 + this commit (Session 5 — exam attempt: DISQUALIFIED)
+D2 DISCLOSURE (first entry, per the memory policy ratified for KOBER this session): this
+  session runs in the SAME CONVERSATION as Session 4. The memory index recalled at the start
+  of that conversation contained the following KOBER entry, verbatim:
+    ## KOBER (Linear A falsification infrastructure)
+    - [Repo pointer + session discipline](project_kober.md) — `C:\Users\LEET\KOBER`, branch
+      `master`, remote `Quigles1337/KOBER` (**public**, created by Al 2026-08-22); constitution
+      `PROGRAM/KOBER-PROGRAM.md` is the sole authority — always run its §4 loop from the repo,
+      never from memory; Sessions 1–3 ran 2026-08-22 (paper verified+extracted, scaffold green,
+      R0 enumerated); next session's FIRST act: the G0 cold-start test.
+  and the sibling's entry, verbatim:
+    - [Repo pointer + session discipline](project_friedman.md) — `C:\Users\LEET\FR13DMAN` /
+      `Quigles1337/FR13DMAN` (**public**, leetspeak name), branch `main`; KOBER's sibling
+      program; constitution `PROGRAM/FRIEDMAN-PROGRAM.md` is the sole authority — always run
+      its §4 loop from the repo, never from memory; Session 1 (2026-08-22): bootstrap +
+      CLAIM-0001..0003 all VERIFIED (Nair 2026 percentile-scorecard-no-ROC confirmed; Timm
+      generator MIT); next: F0.3 manifest ADR; **escalation open: Al to ferry the founding
+      sweep report (F0.1)**.
+  Also recalled: 1 user-identity line, 4 machine/working-preference lines (hazards; D1-legal),
+  and ~27 index lines for unrelated private programs (withheld). In addition, Session 4 read
+  the full `project_kober.md` from the store (phase, targets, toolchain versions, gotchas) and
+  at its close WROTE program state back into it (G0 closed, tip SHA, next action, the
+  CLAIM-0005/0006 caveat) — a D1/D3 violation in hindsight, before any policy existed.
+  Verdict on the recalled content: it held program state (phase target, session history, the
+  next action) → Session 4's exam did not count, exactly as the architects ruled.
+PHASE / GATE: Phase 0 — FOUNDATION. **Gate G0 REOPENED by the architects 2026-08-25**: the
+  Session-4 cold-start pass is WITHDRAWN (memory store held program state; cold reconstruction
+  not demonstrated). Session-4 work product and doc fixes stand. This session was instructed to
+  re-run the exam and is **DISQUALIFIED** under the ratified corollary (it is in the
+  conversation context that built Session 4's state; the entire content of every state file is
+  in its context window). The exam was NOT run. G0 remains open on the cold-start row only.
+ADVANCED:
+- ORIENT from the repo anyway (state files are claims): tree clean, `0e1ac18` == origin/master,
+  `origin/HEAD` now resolves (Session 4 fix holds), gate ALL GREEN at 0e1ac18, CI success at
+  0e1ac18 (run 32879934732, 10 steps). Nothing in the repo changed between sessions.
+- Purge verification (claim vs evidence): the live store now holds a hazards-only
+  `project_kober.md` and a matching index line ("No program state is recorded here") — D1
+  satisfied for the live files. BUT pre-purge backups survive in the store directory:
+  `project_kober.md.bak`, `MEMORY.md.bak`, `project_friedman.md.bak`, carrying the old
+  program-state content with identical `name:` frontmatter. Escalated (STATE) — not deleted by
+  this session (not its files; D3).
+- Retrieved the sibling's ratified policy text (FR13DMAN `PROGRAM/DECISIONS/ADR-0003.md`,
+  commit c1fc6f0 there) so STATE cites D1–D3 accurately instead of paraphrasing; recorded the
+  architects' corollary + extension verbatim in STATE with the executor's reading of the
+  extension flagged for Al to correct in the ADR.
+- STATE rewritten: G0 reopened with the withdrawal trail in the cold-start row; a full exam
+  protocol for a cold successor (self-check → DISQUALIFIED-or-walk → close-or-fix); the
+  memory-policy standing order (ADR-0003 reserved, drafted AFTER the exam per the architects);
+  G1 table kept as pre-staged; P1.1 staged verbatim so the passing session can promote it.
+- No memory writes this session (D3). No CLAIMS transitions (none earned).
+BELIEF DELTAS:
+- "No conversational memory of Sessions 1–3" (Session 4's premise) was true and irrelevant:
+  the memory store is a second channel, and the recalled index line alone named the phase
+  target and the next action. Coldness is a property of ALL channels — store, conversation,
+  and launching prompt — not of one. Evidence: the D2 disclosure above; FR13DMAN HANDOFF
+  Session 4 found the same independently.
+- The disqualification is a fortiori: a memory line with a one-sentence summary voided
+  Session 4; this session holds every state file in full. Any "walk" from here would be
+  recitation. Evidence: this conversation.
+- Backups made during a purge are themselves un-purged memory. A purge is complete only when
+  no file in the store carries program state, indexed or not. Evidence: the three `.bak` files.
+CONFUSIONS:
+- Briefly weighed obeying the instruction literally ("re-run the exam as this session's one
+  thing") against the corollary ratified in the same instruction. Resolved by the sibling's
+  precedent (FR13DMAN STATE: "if the session is not cold, record DISQUALIFIED and stop") and
+  by §0.3 — a false certification is the one output worse than none. Cost: none. Doc fix: the
+  exam protocol in STATE now begins with the self-check so no successor has to weigh it.
+- Whether to draft the memory-policy ADR now. The architects said "after the exam"; drafting it
+  here would also be a second thing (§4.3). Deferred; recorded as a standing order with the
+  number reserved so it cannot be lost.
+HONESTY CHECK: Session 4's HONESTY CHECK claimed a re-read of CLAIM-0001..0006 "cold" — that
+  adverb was wrong (memory-warm); the re-reads themselves stand. Session 4's cold-start row
+  evidence now reads "shows the docs can be walked, not that they were walked cold". No CLAIMS
+  downgrades: nothing in the register depended on the certification.
+DRIFT CHECK: clean. Session was governance and documentation; zero sound values, zero claims
+  about tablets.
+NEXT-SINGLE-ACTION: (see STATE.md — the G0 cold-start test, run by a cold session under the
+  launch conditions and self-check protocol recorded there.)
+ESCALATIONS:
+- Al: delete the pre-purge `.bak` files from the executor memory store before launching the exam
+  session (STATE standing escalations).
+- Al: launch the exam as a fresh conversation with the §6 resume prompt verbatim; the executor
+  cannot create that condition from inside any existing conversation.
+- For the ADR (after the exam): confirm or correct the executor's reading of "extended to cover
+  prompts written by the architects" (STATE memory-policy section).
+STOP-REASON: blocker — this session is not cold by the ratified corollary; nothing further it
+  can do advances G0. Repo green locally at this commit; its CI run is checked at the next
+  ORIENT.
+```
