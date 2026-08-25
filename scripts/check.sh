@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # KOBER local gate (E9): the default branch must pass this clean.
-# CI stand-in until a remote exists (ADR-0002). Run from anywhere.
+# The same gate CI runs (.github/workflows/check.yml; ADR-0002). Run from anywhere.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 echo "== lake build (lean/) =="

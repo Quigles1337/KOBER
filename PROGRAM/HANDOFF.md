@@ -177,3 +177,66 @@ ESCALATIONS: none open. (Remote resolved this session; publication packaging rem
 STOP-REASON: natural boundary — G0's sole remaining criterion is, by its own definition, a task
   for a cold successor. Repo green locally and in CI.
 ```
+
+---
+
+```
+SESSION: 2026-08-25 @ e279df1 + this commit (Session 4 — the cold-start session)
+PHASE / GATE: Phase 0 → **Gate G0 CLOSED** this session. Phase 1 — THEOREM opened; Gate G1
+  open, nothing done yet.
+ADVANCED:
+- Cold-start test (§2) executed as the FIRST act of a session with no memory of Sessions 1–3:
+  §4.1 ORIENT strictly from the repo — git facts → STATE → HANDOFF → CLAIMS → ADR-0000/1/2 →
+  SOURCES → analysis/R0.md + P0.2 extraction → `scripts/check.sh`. Result: ALL GREEN locally
+  at e279df1 (Lean 4.33.1 build, 1/1 cargo test, clippy -D warnings); CI success on master at
+  e279df1 (run 32609862124) as well as 06beff9; zero sorry/admit in lean/ (only the doc
+  comment matches); both stored-source SHA-256s reproduce SOURCES.md; elan 4.2.3 / Rust
+  1.91.0 match the ADRs. No point in the walk required a guess. Verdict: PASS.
+- Four documentation defects a cold successor would hit, fixed in this commit: (1) the
+  constitution §4.1 command `git symbolic-ref refs/remotes/origin/HEAD` failed ("not a
+  symbolic ref") on this working copy — `git remote set-head origin -a` run (local, untracked)
+  and the source-of-truth fallback (`git remote show origin`) recorded in STATE; (2) SOURCES.md
+  S-0001 still said the repo was private/local — struck through with a dated pointer to
+  ADR-0000's public-repo compliance audit; (3) scripts/check.sh header still called itself a
+  CI stand-in; (4) STATE's G0 table had the license criterion "in progress" against a header
+  saying only cold-start remained — resolved to done, with the reasoning in the row.
+- STATE: G0 flipped CLOSED with the full evidence table; Phase 1 opened with the G1 criteria
+  table, a recorded sequencing caveat, and NEXT-SINGLE-ACTION = P1.1 spelled out to the file
+  level. No CLAIMS transitions this session (none were earned).
+BELIEF DELTAS:
+- CLAIM-0004's "L-series < 1/9" is a *domain* corollary, not a C1+C5 corollary: C1+C5 give
+  only L4 < L2 < K < F = 1/8; the 1/9 bound needs K ∈ the 36-value candidate set (largest
+  candidate below 1/8 is 1/9, so K ≤ 1/9 and L2 < 1/9). The paper's "Constraints 1 and 5
+  imply … smaller than 1/9" (p. 5) is loose. CLAIM-0004's hypotheses already include the
+  domains, so the register is correctly scoped — but the P1.2 proof must import the K domain
+  explicitly. Evidence: extraction §5 domain list against the printed C5 chain.
+- A cold `git clone` gets origin/HEAD for free; only this init-then-add-remote working copy
+  lacked it. The constitution's command is sound for successors on fresh clones, and now here.
+- STATE's CI evidence lags the last push by one run (Session 3 wrote STATE before e279df1's
+  run finished; it later succeeded). Successors: `gh run list` at ORIENT, not STATE, is the
+  CI evidence.
+CONFUSIONS:
+- Momentary: whether "not a symbolic ref" meant the remote lacked a default branch. It meant
+  the local ref was never created. Cost: one extra command. Doc fix: STATE ORIENT note.
+- The G0 license row vs. header inconsistency. Cost: a re-read of all five SOURCES entries to
+  adjudicate. Doc fix: the row now carries its reasoning so it cannot be re-litigated.
+HONESTY CHECK: re-read CLAIM-0001..0006 cold. No downgrades. CLAIM-0004 scoping confirmed
+  correct (delta 1). CLAIM-0003's R0b arithmetic re-derived by hand (A < 1/2 → A ≤ 1/3 in the
+  domain; B < 1/4 → B ≤ 1/5; max A + 2B = 11/15 < 1): holds. The CLAIM-0005/0006 sequencing
+  problem is recorded under ESCALATIONS rather than silently re-tiered.
+DRIFT CHECK: clean. Session was gate verification and documentation; zero sound values, zero
+  new claims about what any tablet says.
+NEXT-SINGLE-ACTION: (see STATE.md — P1.1, formalize the constraint system as Lean data
+  conditional on R0a; file-level spec there.)
+ESCALATIONS:
+- None blocking. Heads-up for a possible later ADR (Al's call under §4.6 "constitution
+  amendments"): CLAIM-0005 and CLAIM-0006 are registered as P1 targets but depend on Phase-2
+  replication to fix the model (flags A-1..A-3), and a kernel-checked |S| = 3,794,740 needs a
+  certificate strategy (brute-force `decide` infeasible; `native_decide` adds an axiom E1
+  forbids). Gate G1 "all Phase-1 claims PROVEN" may therefore need a CLAIMS re-tiering
+  transition (executor, with evidence) or a §2 amendment (ADR — Al). Decide when P1.2
+  reaches CLAIM-0005, not before.
+STOP-REASON: gate reached (G0 CLOSED) — §4.6 stop condition. Repo green locally at this
+  commit; its CI run is checked at the next ORIENT (STATE's CI line lags by one run, by
+  construction).
+```

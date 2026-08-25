@@ -25,7 +25,10 @@ entry here.
 - **License:** **CC BY-NC-ND 4.0** for the version of record — stated in Crossref's license field
   (content-version `vor`, `http://creativecommons.org/licenses/by-nc-nd/4.0/`) *and* embedded in
   the stored PDF's own metadata. Redistribution requires attribution, non-commercial use, no
-  derivatives. Repo is currently private/local, so storage is compliant; re-examine at P4.3
+  derivatives. ~~Repo is currently private/local, so storage is compliant~~ **Updated
+  2026-08-25 (Session 4):** the repo has been **public** since Session 3 (2026-08-22);
+  the pre-push compliance audit is recorded in ADR-0000's addendum (non-commercial
+  redistribution of the unmodified VOR with attribution via this entry). Re-examine at P4.3
   publication packaging (which escalates to Al regardless).
 - **Retrieved** (access date 2026-08-22):
   - Stored PDF `sources/corazza-etal-2021-jas-105214.pdf`, retrieved from the University of
