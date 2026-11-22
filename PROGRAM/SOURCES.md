@@ -7,8 +7,13 @@ ingestion; when license is ambiguous, escalate to Al and do not ingest.
 Entry states: **SURVEYED** (existence/coverage/license noted, nothing ingested) vs **INGESTED**
 (data imported into the repo under the recorded license, with audit trail).
 
-Stored copies live under `sources/` at the repo root; every stored file's SHA-256 is recorded in its
-entry here.
+Stored copies that are committed live under `sources/` at the repo root. A stored copy that is
+not committed is kept in the local store `C:\Users\LEET\KOBER-sources`, in a directory named
+for its entry (so far one, `S-0001`). That store is a directory on Al's machine beside the
+repository. It is not part of the repository, and nothing in it is committed (ADR-0004,
+amendment of 2026-11-22 UTC). Every stored file's SHA-256 is recorded in its entry here,
+wherever the file is kept. No NC- or ND-licensed original is committed without Al's ruling
+(K17).
 
 ---
 
@@ -86,6 +91,27 @@ entry here.
   - *KOBER's own licence* (ADR-0004; S-0006) covers neither stored file, nor what `analysis/`
     transcribes from this paper: each keeps the terms above (ADR-0004 D2). Whether the stored
     copy stays in the tree is put to Al (K16; STATE, Standing escalations).
+- **The stored copy left the tree, 2026-11-22 (Session 8, on Al's ruling K17; ADR-0004,
+  amendment):**
+  - *Where the copy is now.*
+    `C:\Users\LEET\KOBER-sources\S-0001\corazza-etal-2021-jas-105214.pdf`, in the local store
+    that the head of this file describes: the same file under the same name, 2,672,215 bytes.
+    Its SHA-256 was taken there at 2026-11-22T21:09:05Z, before the copy in the tree was
+    removed, and it is the digest recorded above,
+    `b08c56357cda7fb1cf53b8bf6a97982b8f8fec9c6938032f00c345d8b1c83e39`.
+  - *What still pins what was read.* That digest, and the FLORE address above, which returned
+    the same bytes at 2026-11-22T20:30:42Z. Either is enough to tell the file that the
+    extraction in `analysis/` was made from.
+  - *Which commits still hold it.* History is not rewritten (K17). The 14 commits from
+    `5f98231` (2026-08-22) through `5831b21` (2026-11-22) hold the copy at
+    `sources/corazza-etal-2021-jas-105214.pdf`, all as the one git blob
+    `9c63c665e657aefbf1c216cb6f8e695d1e022754`, under the paper's own terms. The path is
+    absent from the commit after `5831b21` on, and the copy comes back only on Al's ruling.
+  - *What stays in the tree.* The stored Crossref record,
+    `sources/crossref-10.1016-j.jas.2020.105214.json`, and the extraction in `analysis/` (K18).
+    Where this entry, CLAIMS.md and the analysis files give the path of the PDF, it names the
+    file in the local store and in those commits. The state line above still reads INGESTED
+    for what remains; the paper itself is no longer in the tree.
 
 ---
 

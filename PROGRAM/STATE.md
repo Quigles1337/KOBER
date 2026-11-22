@@ -1,9 +1,8 @@
 # STATE
 
-- **Updated:** 2026-11-22 UTC (Session 8: Al's rulings K9–K14 recorded in `8a01621`, and the
-  closing of Gate G0 stands; KOBER licensed by ADR-0004 on his rulings K15 to K18. The removal
-  of the stored copy of the paper, which K17 orders, is a commit of its own and is not in this
-  one: Standing escalations)
+- **Updated:** 2026-11-22 UTC (Session 8, close: Al's rulings K9–K14 recorded in `8a01621`, and
+  the closing of Gate G0 stands; KOBER licensed by ADR-0004 in `5831b21`, on his rulings K15
+  to K18; the stored copy of the paper removed from the tree by the commit after it, on K17)
 - **Phase:** 1 — THEOREM (opened 2026-11-22 UTC by Session 7, when Gate G0 closed)
 - **Gate:** G1 **open**, nothing done yet (table below). Gate G0 **CLOSED 2026-11-22 UTC at
   `44c0b45`**, the tree its cold-start test passed on. The closing rested on readings that the
@@ -23,15 +22,22 @@
   executor's memory index, which ADR-0003 D1 allows memory to hold.
 - **Build status:** "green" = `bash scripts/check.sh` prints `ALL GREEN` (lake build on Lean
   v4.33.1 + cargo test + clippy at deny-warnings; ADR-0002; the same script runs in CI). Last
-  verified locally 2026-11-22 UTC by Session 8: at `00416bc`, at `8a01621`, and on the tree of
-  the commit that adds the licence. CI: last known success on `master` @ `8a01621` (run
-  45066086960, 2026-11-22T20:22:35Z; one job, `gate`, 10 steps). This line lags the last push
-  by one run: check `gh run list -R Quigles1337/KOBER --branch master` at ORIENT.
+  verified locally 2026-11-22 UTC by Session 8: at `00416bc`, at `8a01621`, at `5831b21`, and
+  on the tree of the commit that removes the stored copy. CI: last known success on `master` @
+  `5831b21` (run 45070339969, 2026-11-22T21:07:54Z; one job, `gate`, 10 steps). This line lags
+  the last push by one run: check `gh run list -R Quigles1337/KOBER --branch master` at ORIENT.
 - **Licence:** the PolyForm Noncommercial License 1.0.0, from the commit that adds `LICENSE`
   (ADR-0004; Al's ruling K15 of 2026-11-22 UTC). Copyright is Al's, held personally. No licence
-  is granted for earlier commits. The licence does not cover third-party material: the two
-  stored files under `sources/`, and what the analysis files transcribe from S-0001, keep
-  their own terms (ADR-0004 D2; K16 to K18). The text and its provenance: `LICENSE`, S-0006.
+  is granted for earlier commits. The licence does not cover third-party material: the stored
+  Crossref record under `sources/`, and what the analysis files transcribe from S-0001, keep
+  their own terms (ADR-0004 D2 and its amendment; K16 to K18). The stored copy of the paper is
+  no longer in the tree (K17). The text and its provenance: `LICENSE`, S-0006.
+- **Local store:** `C:\Users\LEET\KOBER-sources`, a directory on Al's machine beside the
+  repository. It is not part of the repository, and nothing in it is committed. It holds the
+  stored copies that are not committed: so far one, the paper, at
+  `S-0001\corazza-etal-2021-jas-105214.pdf` (K17; SOURCES.md, its head and S-0001). A session
+  that needs the paper reads it there, and first checks its SHA-256 against S-0001. K18's rule
+  on quoting applies to whatever a session takes from it.
 
 ## Memory policy — ADR-0003
 
@@ -48,7 +54,7 @@ Session-N prompt verbatim and nothing that carries program state (the corollary,
 
 | Criterion | Status | Evidence |
 |---|---|---|
-| CLAIM-0001 resolved to VERIFIED (P0.1) | **done** | CLAIMS.md CLAIM-0001 transition 2026-08-22; SOURCES.md S-0001 (stored PDF + Crossref record with SHA-256s; digests re-verified 2026-08-25) |
+| CLAIM-0001 resolved to VERIFIED (P0.1) | **done** | CLAIMS.md CLAIM-0001 transition 2026-08-22; SOURCES.md S-0001 (stored PDF + Crossref record with SHA-256s; digests re-verified 2026-08-25). Since 2026-11-22 UTC the PDF is kept in the local store and not in the tree (K17), under the same SHA-256; the Crossref record is in the tree. |
 | R0 enumerated with provenance (P0.3) | **done** | `analysis/R0.md` (R0-agg + R0-named + variants R0a–R0d, damage notation preserved, editions as cited by S-0001); CLAIM-0003 VERIFIED |
 | Informal uniqueness theorem stated in CLAIMS (P0.4) | **done** | CLAIM-0004 (constraint corollaries), CLAIM-0005 (exact solution set, \|S\| = 3,794,740 — kernel-checked non-uniqueness), CLAIM-0006 (optimum characterization = the paper's actual claim); "uniqueness from constraints" deliberately NOT claimed (extraction §0/§7) |
 | Repo scaffolded and green (P0.5) | **done** | ADR-0001 (Lean v4.33.1 pinned, no Mathlib), ADR-0002 (layout, Rust 1.91.0 pin, `scripts/check.sh` gate, CI activated Session 3); gate ALL GREEN 2026-08-22 and 2026-08-25 (×2) |
@@ -76,9 +82,7 @@ P1.2 reaches CLAIM-0005, not before. CLAIM-0004 has no such dependency.
 
 ## Blockers
 
-- None for P1.1 itself: K18 says that it goes ahead. Ahead of it stands the removal of the
-  stored copy of the paper (K17), which Session 8 prepares as a commit of its own and commits
-  only on Al's answer "accepted" (Standing escalations).
+- None. K18 says that P1.1 goes ahead.
 
 ## Al's rulings K1–K8 of 2026-11-22 UTC (verbatim)
 
@@ -233,9 +237,10 @@ K18 (what the analysis files transcribe). It stays as it is, and P1.1 goes ahead
 What they change here, in the executor's words. Where these and the rulings differ, the rulings
 govern.
 
-- **K17: the stored copy of the paper leaves the tree,** by a commit of its own (Standing
-  escalations). It comes back only on Al's ruling. History is not rewritten: the commits that
-  already hold the copy keep it.
+- **K17: the stored copy of the paper left the tree** on 2026-11-22 UTC, by a commit of its
+  own, the one after `5831b21` (Standing escalations). It is kept in the local store (header).
+  It comes back only on Al's ruling. History is not rewritten: the 14 commits from `5f98231`
+  through `5831b21` hold the copy and keep it.
 - **K17, a standing rule:** no other NC- or ND-licensed original is committed without Al's
   ruling. It stands beside E10 and the rules at the head of SOURCES.md.
 - **K18: what the analysis files transcribe stays as it is, and P1.1 goes ahead.** Al's line
@@ -248,13 +253,13 @@ govern.
 
 ## Standing escalations
 
-- **Open — the removal of the stored copy of the paper (K17; Session 8, 2026-11-22 UTC).** K17
-  orders the copy out of the tree, and Al's answer orders the removal prepared as a commit of
-  its own, after the commit that adds the licence, and committed only on his answer
-  "accepted". Until that commit is on `master`, `sources/corazza-etal-2021-jas-105214.pdf` is
-  in the tree. A removal found uncommitted in a working tree (the file deleted, and a copy of
-  it in `C:\Users\LEET\KOBER-sources\S-0001`, a local store that is not part of the
-  repository) is that unaccepted preparation: a successor does not commit it, and asks Al.
+- **Closed by Al's "accepted" (2026-11-22 UTC): the removal of the stored copy of the paper
+  (K17).** Session 8 copied the file to `C:\Users\LEET\KOBER-sources\S-0001`, checked there
+  that its SHA-256 is the one S-0001 records, and only then removed
+  `sources/corazza-etal-2021-jas-105214.pdf` from the tree, by a commit of its own. The
+  Crossref record stays. Where the copy was cited, lines were added and none rewritten:
+  S-0001, CLAIM-0001 to CLAIM-0003 and both analysis files. ADR-0004 carries a dated
+  amendment.
 - **Al's, and not the executor's: the authors' permission (K18).** Al is asking the paper's
   authors. No session acts on it. What binds sessions meanwhile is K18's last sentence.
 - **Closed by K17 and K18 (2026-11-22 UTC): K16's two questions,** which Session 8 put to Al
@@ -303,8 +308,8 @@ all. Its label ("Staged … when G0 closes") is history: this is the action.
 Al's message to Session 8 keeps it so: P1.1 is the next action after the two things that
 message orders, the record of K9–K14 (`8a01621`) and the licence (ADR-0004). Both are done,
 and K18 says that P1.1 goes ahead. K18 also binds it: P1.1 quotes no more of the paper than
-checking a statement needs. Before P1.1 comes the removal of the stored copy of the paper
-(K17; Standing escalations).
+checking a statement needs. The removal of the stored copy of the paper (K17) is done as
+well: where P1.1 needs the paper, it is in the local store (header) and not in the tree.
 
 **Staged P1.1 (becomes NEXT-SINGLE-ACTION when G0 closes):** formalize the constraint system as
 Lean data conditional on R0a, in `lean/` (file names are suggestions; ADR-0001's design guidance
@@ -489,8 +494,11 @@ KOBER what FRIEDMAN's steps (1) to (5) say and KOBER's steps 2 and 3 leave unsai
 6. *Step 2, evidence.* `bash scripts/check.sh` must print `ALL GREEN`, and
    `gh run list -R Quigles1337/KOBER --branch master --limit 3` must show `check` succeeding
    for `master`'s tip. Confirm each Gate G0 row's evidence link: a cited commit is on `master`
-   (`git merge-base --is-ancestor`), a cited file exists, a recorded digest matches (the two
-   stored files under `sources/` against the SHA-256s in SOURCES.md, S-0001).
+   (`git merge-base --is-ancestor`), a cited file exists, a recorded digest matches (the stored
+   Crossref record under `sources/` against its SHA-256 in SOURCES.md, S-0001). Gate G0's exam
+   checked two stored files there. The second, the paper, left the tree on 2026-11-22 UTC
+   (K17): its digest can be checked against the copy in the local store, or against a fresh
+   retrieval from the address in S-0001, and neither of those is the repository.
 7. *Step 2, what counts as a guess; step 3.* Any guess about the program fails the gate. A
    place where the repo did not say *how to do a thing* is written down as well, for Al to weigh
    (ruling C, below). On a pass, G0 is marked CLOSED with the date and the SHA at which the test

@@ -1548,3 +1548,166 @@ The two memory files the disclosure covers, taken again by script at 2026-11-22T
       b093bc495be4bedc56f421c2cc6852dab6a66ab5b621a108cbf49112ed64f7d6,
       as the disclosure records it; those 2243 bytes stand unchanged at the head of the file)
 No other memory file was opened at any point, and no other store.
+
+AFTER THE LICENCE COMMIT. `5831b21` was pushed at once (`8a01621..5831b21`), and CI `check`
+succeeded for it (run 45070339969, a push, 2026-11-22T21:07:54Z; one job, `gate`, 10 steps,
+each a success).
+
+THE REMOVAL (K17): prepared as a commit of its own on top of `5831b21`, as Al's answer orders,
+and shown to Al before the commit. The four points are his, in his numbering.
+
+1. The copy first. `C:\Users\LEET\KOBER-sources` did not exist: the session looked before it
+   created anything. It created `C:\Users\LEET\KOBER-sources\S-0001` and copied the stored
+   file there under its own name. The SHA-256 of the copy, taken there at
+   2026-11-22T21:09:05Z, is the digest that S-0001 records, which the command read from
+   SOURCES.md and did not carry typed:
+   b08c56357cda7fb1cf53b8bf6a97982b8f8fec9c6938032f00c345d8b1c83e39
+   (2,672,215 bytes, byte for byte the file in the tree). Only then was
+   `sources/corazza-etal-2021-jas-105214.pdf` removed from the tree (`git rm`). The stored
+   Crossref record was not touched. The local store is outside the repository: git finds no
+   repository at that path.
+2. Added, and nothing rewritten. A dated addition to S-0001: where the copy is; that the
+   digest and the FLORE address still pin what was read; that the 14 commits from `5f98231`
+   through `5831b21` still hold it, all as one blob. A dated line at the end of the
+   transitions of CLAIM-0001 and of CLAIM-0002, the two entries that cite the path, with no
+   status changed and no existing line touched; and, after Al's second answer, the same line
+   for CLAIM-0003 (below). One dated line in each analysis file, placed directly under its
+   title, and nothing else in those two files.
+3. Brought into line, because it would otherwise be untrue. The README's Licence section: one
+   bullet. In STATE: the first row of the Gate G0 table; note 6 on the exam's steps, which
+   named the two stored files; the Licence bullet; the escalations; and with them the updated
+   line, the build line, Blockers, the K17 bullet under his rulings, and the paragraph at the
+   head of NEXT-SINGLE-ACTION. In SOURCES: the sentence at its head about stored copies.
+   ADR-0004: a dated amendment at its end. Its accepted text is unchanged: the file at
+   `5831b21` is a prefix of the new one (checked by script).
+4. The local store is recorded in SOURCES (its head) and in STATE (the header) as a directory
+   that is not part of the repository, with nothing in it committed.
+
+Verified before Al was shown anything, and again before the commit. `bash scripts/check.sh`
+printed ALL GREEN on the tree without the PDF. `git ls-files --eol` shows every changed text
+file `w/lf`. Lines added and removed in the commit, by `git diff --numstat` against `5831b21`,
+this file left out (at the stop CLAIMS.md stood at 9 added, before CLAIM-0003's line):
+    PROGRAM/CLAIMS.md: 13 added, 0 removed
+    PROGRAM/DECISIONS/ADR-0004.md: 48 added, 0 removed
+    PROGRAM/SOURCES.md: 28 added, 2 removed
+    PROGRAM/STATE.md: 37 added, 29 removed
+    README.md: 4 added, 3 removed
+    analysis/P0.2-constraint-system.md: 1 added, 0 removed
+    analysis/R0.md: 1 added, 0 removed
+    sources/corazza-etal-2021-jas-105214.pdf: removed (a binary file)
+The stored Crossref record's SHA-256 is as S-0001 records it. The copy in the local store was
+hashed again after the build and gives the same digest.
+
+THE SECOND STOP, as ordered: before the commit. Al was given the list of files and every line
+added or changed outside this file. Put to him with them:
+- where the one line stands in each analysis file: directly under the title, above the bullet
+  that cites the path;
+- CLAIM-0003, which cites "the stored VOR (S-0001)" and not the path, and so gets no line;
+- one sentence of the executor's in STATE's new Local store bullet: that a session which needs
+  the paper reads it in the local store, and first checks its SHA-256 against S-0001;
+- S-0001's state line, which still reads INGESTED, because his order is to add to S-0001 and
+  not to rewrite it. The addition says what the word now covers.
+
+AL'S SECOND ANSWER (verbatim): his third message in the conversation, received
+2026-11-22T21:25:32Z (the harness's record: record 1006 of the same file, the third record of
+type `user` that holds a pasted message; turnPosition promptIndex 3 and turnIndex 3, origin
+human). Copied from that record by script; the paste wrapper is not reproduced. It is 7 lines,
+and its paragraphs are single long lines, kept as he sent them.
+
+```text
+Accepted, with one addition and no further stop.
+
+CLAIM-0003 gets the same dated line as CLAIM-0001 and CLAIM-0002, with no status changed: its evidence is anchored in the same stored copy.
+
+The rest is accepted as you wrote it: the line directly under each analysis file's title, the further lines you brought into line in STATE, your two phrases, and S-0001's state line with the addition that says what it now covers.
+
+Commit, push, confirm CI and stop. P1.1 stays the next action.
+```
+
+AFTER THE SECOND ANSWER: the removal commit, on top of `5831b21`.
+- His one addition: CLAIM-0003 has the dated line, at the end of its transitions, with no
+  status changed and no existing line touched. Its first clause says what that entry cites
+  ("the stored VOR (S-0001)"), because it names no path; the rest is the line of CLAIM-0002.
+- Brought into line with that addition, and nothing else changed from what he was shown. In
+  STATE, the closed escalation names CLAIM-0001 to CLAIM-0003. In ADR-0004's amendment, the
+  bullet on what was added names the three entries and says why the third has its line.
+  SOURCES, the README and the two analysis files are byte for byte what he was shown (SHA-256
+  taken at the stop and compared before the commit).
+- Accepted as written, by his answer: the line directly under each analysis file's title; the
+  further lines brought into line in STATE; the executor's two phrases; S-0001's state line,
+  with the addition that says what it now covers.
+- The dates stand: his answer came on 2026-11-22 UTC.
+- Verified before the commit: `bash scripts/check.sh` printed ALL GREEN on the tree of the
+  commit, and the copy in the local store still gives the digest that S-0001 records.
+
+§4.5 FIELDS, ADDITIONS AT THE CLOSE. They add to the fields recorded at the licence commit, and
+they replace its NEXT-SINGLE-ACTION, ESCALATIONS and STOP-REASON.
+
+PHASE / GATE: unchanged. Phase 1 — THEOREM / Gate G1 open, nothing done.
+ADVANCED, added:
+- The licence commit, `5831b21`, pushed; CI green.
+- The removal of the stored copy of the paper (K17), as a commit of its own. Shown to
+  Al, accepted with one addition (CLAIM-0003's line), and committed.
+- No CLAIMS transition. Three CLAIMS entries gained a dated line with no status changed. The
+  constitution, ADR-0000 to 0003, the Lean and Rust sources and the stored Crossref record are
+  untouched.
+BELIEF DELTAS, added:
+- A stored source is cited by path in more places than its S-entry: two CLAIMS entries, two
+  analysis files, STATE in four places, the README and the head of SOURCES. A citation by
+  S-number and digest would have survived the move, and a citation by path did not. Evidence:
+  the list of this commit's additions. Not changed here, because K17's order was to add and
+  not to rewrite; a later session that cites a stored copy can cite the entry and the digest.
+- "Cites the path" was the wrong test for which CLAIMS entries the removal reaches. Al's
+  second answer gives the test that matters: whether the entry's evidence is anchored in the
+  stored copy. CLAIM-0003's is, though it names no path. Evidence: his answer, below.
+- The next disclosure will not match this one for `project_kober.md`: the ordered write
+  changed its size, time and SHA-256 (MEMORY, in the fields at the licence commit, gives
+  both). A successor that compares disclosures should expect 2,442 bytes and the digest
+  recorded there, and three more lines of machine hazard in the file.
+- A local store outside the repository now holds the one copy of the paper that sessions can
+  open without the network. It is not the repository: a cold-start test cannot rest on it,
+  and note 6 on the exam's steps in STATE now says so.
+CONFUSIONS, added:
+- "Under the header of each analysis file" can mean under the title or under the block of
+  bullets that follows it. The session put the line directly under the title, above the bullet
+  that cites the path, and showed Al the placement. Cost: none.
+- Two failures of the session's own build scripts, each before anything was written. One
+  compared a quoted sentence with text that had already been wrapped across a line. The other
+  read the 2.6 MB blob of the paper through a call whose buffer holds 1 MB. Cost: one rerun
+  each.
+HONESTY CHECK, added: CLAIM-0001, CLAIM-0002 and CLAIM-0003 keep their statuses. Their
+  evidence is intact in substance: the digest, the address, the copy in the local store and
+  fourteen commits of history. But a reader who has only the tip of the repository can no
+  longer open the paper there, and the three entries now say so in a dated line. At the stop
+  CLAIM-0003 had no line, on the executor's strict reading of "cites the path"; Al's second
+  answer overruled that reading and the line was added. Its first clause differs from the
+  other two because the entry names no path: it says what the entry does cite. S-0001's state
+  line still reads INGESTED; the addition under it says what that now covers, and Al accepted
+  it so.
+DRIFT CHECK: still clean. A file moved out of the tree and the record of it: no sound value,
+  no claim about what any tablet says. Scope refused: rewriting history; removing the stored
+  Crossref record; rewording the old citations in place of adding to them; starting P1.1.
+NEXT-SINGLE-ACTION: see STATE.md. P1.1, unchanged and now unblocked by K18: formalize the
+  constraint system as Lean data conditional on R0a, to the staged specification, read with
+  Session 7's pointer and K13, quoting no more of the paper than checking a statement needs.
+  Where it needs the paper, the copy is in the local store.
+ESCALATIONS:
+- None is open for the executor to bring to Al.
+- Al's, and not the executor's: whether what the analysis files transcribe needs the authors'
+  permission (K18), and whether the stored copy comes back to the tree (K17). He is asking the
+  paper's authors. No session acts on either.
+- CI for the removal commit is confirmed by this session after the push and reported to Al in
+  the conversation. The repo's record of it is made by the next session at ORIENT, as STATE's
+  build line says.
+- Carried, not open: the CLAIM-0005/0006 sequencing caveat under the G1 table in STATE.
+STOP-REASON: natural boundary — the two things Al's message ordered are done, and so is the
+  removal that his answer added to them. Default branch green: `bash scripts/check.sh` prints
+  ALL GREEN on the tree of this commit.
+MEMORY, at the session's end (K14; ADR-0003 note 6). Taken again by script at 2026-11-22T21:27:38Z.
+Nothing was written to memory after the one ordered write that the fields at the licence
+commit record, and both files are as that record leaves them:
+    MEMORY.md: 20042 bytes, modified 2026-11-22T01:46:57.731Z, SHA-256
+      7e74ab1cb3b2efcdda278cc9a7a3ca4b8674d2649bdf4f1609f7cd8b97d5d453
+    project_kober.md: 2442 bytes, modified 2026-11-22T21:03:55.734Z, SHA-256
+      b881fe7d2953ea170bfa84c40770eaa514558f583a3d18cf460393e5a4b06fd9
+No other memory file was opened at any point, and no other store.

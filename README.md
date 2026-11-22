@@ -34,9 +34,10 @@ In plain terms (the licence text governs, not this summary):
 The licence does not cover third-party material, which keeps the terms recorded in
 [`PROGRAM/SOURCES.md`](PROGRAM/SOURCES.md):
 
-- the stored copy of Corazza et al. 2021 under [`sources/`](sources) (© 2020 The Authors,
-  published by Elsevier Ltd.; CC BY-NC-ND 4.0), and Crossref's metadata record for it beside
-  it (S-0001);
+- Crossref's metadata record for Corazza et al. 2021 under [`sources/`](sources) (S-0001). The
+  paper itself (© 2020 The Authors, published by Elsevier Ltd.; CC BY-NC-ND 4.0) is no longer
+  in this tree: its stored copy was removed on 2026-11-22 UTC, and the earlier commits that
+  hold it keep it under the paper's own terms;
 - what the files under [`analysis/`](analysis) quote and transcribe from that paper: its
   words, the counts of its tables and the readings it names, which remain its authors';
 - any third-party data added later.

@@ -35,6 +35,11 @@ transition line. Transitions require evidence. Downgrades are always permitted a
     *Journal of Archaeological Science* 125 (2021), 105214, DOI 10.1016/j.jas.2020.105214 (online
     2020-09-06). The constitution's memory-belief was correct on all five authors and the topic;
     venue/year/DOI now established by retrieval, not memory. Evidence: S-0001.
+  - 2026-11-22 (Session 8) — no status change. The stored PDF this entry cites at
+    `sources/corazza-etal-2021-jas-105214.pdf` left the tree on Al's ruling K17. It is the same
+    file under the same SHA-256, kept in the local store `C:\Users\LEET\KOBER-sources\S-0001`
+    and held by commits `5f98231` to `5831b21` (S-0001). The stored Crossref record is in the
+    tree as before.
 
 ---
 
@@ -61,6 +66,10 @@ transition line. Transitions require evidence. Downgrades are always permitted a
 - **Axiom print:** n/a (not a formal claim)
 - **Transitions:**
   - 2026-08-22 (Session 2) — created VERIFIED with retrieval-extraction evidence (P0.2).
+  - 2026-11-22 (Session 8) — no status change. The stored PDF this entry cites at
+    `sources/corazza-etal-2021-jas-105214.pdf` left the tree on Al's ruling K17. It is the same
+    file under the same SHA-256, kept in the local store `C:\Users\LEET\KOBER-sources\S-0001`
+    and held by commits `5f98231` to `5831b21` (S-0001).
 
 ---
 
@@ -82,6 +91,10 @@ transition line. Transitions require evidence. Downgrades are always permitted a
 - **Axiom print:** n/a
 - **Transitions:**
   - 2026-08-22 (Session 3) — created VERIFIED (P0.3).
+  - 2026-11-22 (Session 8) — no status change. The stored PDF this entry's evidence is anchored
+    in (its "stored VOR (S-0001)"), `sources/corazza-etal-2021-jas-105214.pdf`, left the tree on
+    Al's ruling K17. It is the same file under the same SHA-256, kept in the local store
+    `C:\Users\LEET\KOBER-sources\S-0001` and held by commits `5f98231` to `5831b21` (S-0001).
 
 ---
 
