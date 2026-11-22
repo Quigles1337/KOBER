@@ -1,11 +1,12 @@
 # STATE
 
-- **Updated:** 2026-11-22 UTC (Session 6, close: Al's rulings K1–K8, ADR-0003, the amended §6
-  Session-N prompt)
-- **Phase:** 0 — FOUNDATION
-- **Gate:** G0 **open, on the cold-start test alone.** The other five criteria are done with
-  evidence (table below). The architects reopened the gate on 2026-08-25 when they withdrew the
-  Session-4 pass. Phase 1 opens only when G0 closes.
+- **Updated:** 2026-11-22 UTC (Session 7, close: the Gate G0 cold-start exam passed; G0 CLOSED;
+  Phase 1 opened at P1.1)
+- **Phase:** 1 — THEOREM (opened 2026-11-22 UTC by Session 7, when Gate G0 closed)
+- **Gate:** G1 **open**, nothing done yet (table below). Gate G0 **CLOSED 2026-11-22 UTC at
+  `44c0b45`**, the tree its cold-start test passed on. The closing rests on readings that the
+  exam session made of itself and named for Al to overrule (Standing escalations). If he
+  overrules one, G0 reopens by a new commit, as it did on 2026-08-25.
 - **Default branch:** `master`. Remote: `origin` = `https://github.com/Quigles1337/KOBER`
   (**public**; created by Al Session 3; CI = `.github/workflows/check.yml`).
   **ORIENT note (E7):** the constitution's `git symbolic-ref refs/remotes/origin/HEAD` failed
@@ -15,14 +16,14 @@
   source-of-truth fallback is `git remote show origin` (prints `HEAD branch: master`); do not
   guess.
 - **Launch (K8):** where Al launches a session from is his practice and not a condition of an
-  exam (ruled 2026-11-22 UTC). Session 6 was started in `C:\Users\LEET`, not in the repository
-  directory, and took the repo's location from the line for this program in the executor's
-  memory index, which ADR-0003 D1 allows memory to hold.
+  exam (ruled 2026-11-22 UTC). Sessions 6 and 7 were started in `C:\Users\LEET`, not in the
+  repository directory, and took the repo's location from the line for this program in the
+  executor's memory index, which ADR-0003 D1 allows memory to hold.
 - **Build status:** "green" = `bash scripts/check.sh` prints `ALL GREEN` (lake build on Lean
   v4.33.1 + cargo test + clippy at deny-warnings; ADR-0002; the same script runs in CI). Last
-  verified locally 2026-11-22 UTC by Session 6: at `f94bec2`, and on the tree of the commit that
-  adds ADR-0003. CI: last known success on `master` @ `f94bec2` (run 32890264336,
-  2026-08-25T19:33:41Z; one job, `gate`, 10 steps). This line lags the last push by one run:
+  verified locally 2026-11-22 UTC by Session 7: at `44c0b45`, and on the tree of the commit that
+  closes G0. CI: last known success on `master` @ `44c0b45` (run 45062828893,
+  2026-11-22T19:48:26Z; one job, `gate`, 10 steps). This line lags the last push by one run:
   check `gh run list -R Quigles1337/KOBER --branch master` at ORIENT.
 
 ## Memory policy — ADR-0003
@@ -36,7 +37,7 @@ memory is written during an exam session (D3). A session running in the conversa
 that built the state under test is not cold, and a cold session is launched with the §6
 Session-N prompt verbatim and nothing that carries program state (the corollary, K2).
 
-## Gate G0 exit criteria
+## Gate G0 exit criteria — CLOSED 2026-11-22 UTC at `44c0b45`
 
 | Criterion | Status | Evidence |
 |---|---|---|
@@ -45,9 +46,9 @@ Session-N prompt verbatim and nothing that carries program state (the corollary,
 | Informal uniqueness theorem stated in CLAIMS (P0.4) | **done** | CLAIM-0004 (constraint corollaries), CLAIM-0005 (exact solution set, \|S\| = 3,794,740 — kernel-checked non-uniqueness), CLAIM-0006 (optimum characterization = the paper's actual claim); "uniqueness from constraints" deliberately NOT claimed (extraction §0/§7) |
 | Repo scaffolded and green (P0.5) | **done** | ADR-0001 (Lean v4.33.1 pinned, no Mathlib), ADR-0002 (layout, Rust 1.91.0 pin, `scripts/check.sh` gate, CI activated Session 3); gate ALL GREEN 2026-08-22 and 2026-08-25 (×2) |
 | SOURCES.md has license notes for every data source touched | **done** | Touched: S-0001 (INGESTED, CC BY-NC-ND 4.0) and S-0004 SigLA (three document pages fetched link-only, CC BY-NC-SA 4.0). Surveyed only: S-0002 (© EFA, terms not established), S-0003 (UNKNOWN), S-0005 (UNKNOWN) — each with the E10 no-ingestion rule. Resolved to done by Session 4 (reasoning: nothing touched lacks a license note; UNKNOWN *is* the E5/E10-mandated record). |
-| Cold-start test (§2) | **open — not passed** | Session 4 recorded a pass on 2026-08-25 and the architects **withdrew** it the same day: the executor memory store held program state when that session started, so a cold reconstruction was not demonstrated (HANDOFF Session 5, D2 disclosure). Session 5 was told to re-run the exam and **disqualified** itself: it ran in the conversation that built Session 4's state (the corollary, now ADR-0003, K2). Session 4's walk and its four doc fixes show that the docs *can* be walked, not that they were walked cold. HANDOFF Session 5 records that the live store was purged of program state on 2026-08-25; what it holds now is for the exam session's disclosure to show. Session 6 (2026-11-22 UTC) recorded Al's rulings and made the exam runnable. It built the state the exam tests, so it is not cold, and it neither ran nor rehearsed the exam. The exam is NEXT-SINGLE-ACTION. |
+| Cold-start test (§2) | **done — passed 2026-11-22 UTC at `44c0b45`** | Session 7, a cold session: launched with the §6 Session-N prompt verbatim as the first turn of a new conversation (ADR-0003, K2). It disclosed its memory first (D2), recorded its standing (not disqualified: it read no disclosed memory as program state), and walked §4.1 from the repo: git facts → this file → HANDOFF Session 6 (then Sessions 4 and 5) → CLAIMS → ADR-0000 to 0003 → SOURCES and `analysis/` → `scripts/check.sh` ALL GREEN and CI `check` success on the tip. No point required a guess about the program. Record: HANDOFF Session 7 (MEMORY DISCLOSURE, STANDING, THE WALK, VERDICT). The session named its closest calls for Al to overrule (Standing escalations). History: Session 4 recorded a pass on 2026-08-25 and the architects withdrew it the same day (the executor memory store held program state); Session 5 disqualified itself (it ran in the conversation that built Session 4's state); Session 6 made the exam runnable and neither ran nor rehearsed it (HANDOFF Sessions 4 to 6). |
 
-## Gate G1 exit criteria (pre-staged; Phase 1 opens only when G0 closes)
+## Gate G1 exit criteria (Phase 1; open)
 
 | Criterion | Status | Evidence |
 |---|---|---|
@@ -68,8 +69,7 @@ P1.2 reaches CLAIM-0005, not before. CLAIM-0004 has no such dependency.
 
 ## Blockers
 
-- **G0 can be closed only by a cold session** (ADR-0003, K2), and only Al can launch one. Nothing
-  else blocks.
+- None. Al's judgment of the Gate G0 exam is an open escalation (below), not a blocker.
 
 ## Al's rulings K1–K8 of 2026-11-22 UTC (verbatim)
 
@@ -151,8 +151,19 @@ Record it in STATE.
 
 ## Standing escalations
 
-- **Open:** none awaiting a decision. Standing rule, not a pending question: publication
-  packaging and announcement remain gated at P4.3 whatever the repo's visibility (§4.6).
+- **Open — Al's judgment of the Gate G0 exam (Session 7, 2026-11-22 UTC).** G0 is recorded
+  CLOSED on the exam session's own readings. HANDOFF Session 7 gives them in full and names
+  them for Al to overrule: (1) the memory reading, that no disclosed line is program state,
+  with six closest calls, the fifth of a kind that ruling B did not cover (the memory cites a
+  decision record as its reason for holding no state); (2) the disclosure order: before it
+  appended, the disclosure script read a transcription file that the session had written
+  itself, took the size and modified time of the two memory files, and wrote a scratch copy of
+  its own bytes; (3) one slip in the walk, a directory name assumed in a listing command, with
+  nothing built on it; (4) six places where the repo did not say how to do a thing. Rulings A
+  to D on FRIEDMAN's exam are precedent for calls of their kinds, not advance acceptance of
+  these (Al's answer to Session 6, in HANDOFF).
+- **Standing rule, not a pending question:** publication packaging and announcement remain
+  gated at P4.3 whatever the repo's visibility (§4.6).
 - **Closed by K7 (2026-11-22 UTC), recorded in HANDOFF Session 6: the pre-purge memory copies.**
   `project_kober.md` was confirmed present in
   `C:\Users\LEET\.claude\projects\C--Users-LEET\memory` before anything else was done there.
@@ -170,6 +181,43 @@ Record it in STATE.
   when P1.2 reaches CLAIM-0005, not before.
 
 ## NEXT-SINGLE-ACTION
+
+**P1.1 — formalize the constraint system as Lean data conditional on R0a.** Gate G0 closed on
+2026-11-22 UTC, so the task that Session 4 staged is now the next single action. The paragraph
+below is the staged text, copied by script from this file at `44c0b45`, unchanged, label and
+all. Its label ("Staged … when G0 closes") is history: this is the action.
+
+**Staged P1.1 (becomes NEXT-SINGLE-ACTION when G0 closes):** formalize the constraint system as
+Lean data conditional on R0a, in `lean/` (file names are suggestions; ADR-0001's design guidance
+governs; any ADR-worthy choice gets an ADR): (1) `lean/Kober/Frac.lean` — hand-rolled fraction
+type (`Nat` numerator, positive denominator, `=`/`<`/`≤` by cross-multiplication, decidable
+instances, `decide`-checked sanity lemmas; no Mathlib); (2) `lean/Kober/R0.lean` — the 12-sign
+inventory `J, E, F, K, D, B, H, A, L2, L3, L4, L6` and the value domains from
+`analysis/P0.2-constraint-system.md` §5, the 36-value candidate set for A, B, D, H, K
+**verbatim** (including the printed "1/108, 1/100" order), the L-series domain parameterized so
+both A-1 readings are expressible without choosing; (3) `lean/Kober/Constraints.lean` —
+`Assignment := Sign → Frac`, Constraints 1–6 as `Prop`s (C1 fixes J, E, F; C2/C4 over the
+Table-1 attested combinations, extraction §3; C3 economy; C5 from the **printed** relation list
+only, "B > L2" as a separately named optional hypothesis per OBS-3; C6 with hl = 1); (4) done
+when `scripts/check.sh` is ALL GREEN with zero sorry and at least one `decide`-checked sanity
+theorem holds. Commit `[P1][CLAIM-0004] …`; then P1.2 proves the CLAIM-0004 corollaries.
+Watch-out: "L-series < 1/9" needs K's *domain* (largest candidate below 1/8 is 1/9), not
+C1+C5 alone (HANDOFF Session 4, BELIEF DELTAS).
+
+Session 7's pointer, not part of the staged text and not adjudicated: the Table-1 combination
+list in extraction §3 includes `H H H` (CHIC #068.r.A) and two `*180` ligatures (MA 4), which
+S-0001 did not use in Simulation 2 (`analysis/R0.md` §3, and R0a in §5). The staged text's
+"Table-1 attested combinations" and "conditional on R0a" have to be read together to get the
+combination set for C2 to C4.
+
+## The cold-start exam: the three steps, as Gate G0's exam ran them
+
+Kept by the session that passed the exam, as the section below orders ("it keeps the three
+steps and this section"). Until Gate G0 closed, this text stood under NEXT-SINGLE-ACTION: where
+the section below says "in NEXT-SINGLE-ACTION above", it means here. It is copied by script
+from this file at `44c0b45`, unchanged, and it is written for Gate G0, which is closed: it is
+not the current action. Whether a later gate's exam uses it as it stands is Al's to say when
+that exam becomes the next action.
 
 **Run the Gate G0 cold-start test (§2) — in a session that is cold.** Only Al can start one: a
 new conversation, launched with the constitution's §6 "Session N — resume" prompt as amended on
@@ -200,22 +248,29 @@ program's exam. Read that section before doing step 1.
    **On guessing:** fix the documentation first — the gate is not passed by working code
    with unreconstructable context (§2).
 
-**Staged P1.1 (becomes NEXT-SINGLE-ACTION when G0 closes):** formalize the constraint system as
-Lean data conditional on R0a, in `lean/` (file names are suggestions; ADR-0001's design guidance
-governs; any ADR-worthy choice gets an ADR): (1) `lean/Kober/Frac.lean` — hand-rolled fraction
-type (`Nat` numerator, positive denominator, `=`/`<`/`≤` by cross-multiplication, decidable
-instances, `decide`-checked sanity lemmas; no Mathlib); (2) `lean/Kober/R0.lean` — the 12-sign
-inventory `J, E, F, K, D, B, H, A, L2, L3, L4, L6` and the value domains from
-`analysis/P0.2-constraint-system.md` §5, the 36-value candidate set for A, B, D, H, K
-**verbatim** (including the printed "1/108, 1/100" order), the L-series domain parameterized so
-both A-1 readings are expressible without choosing; (3) `lean/Kober/Constraints.lean` —
-`Assignment := Sign → Frac`, Constraints 1–6 as `Prop`s (C1 fixes J, E, F; C2/C4 over the
-Table-1 attested combinations, extraction §3; C3 economy; C5 from the **printed** relation list
-only, "B > L2" as a separately named optional hypothesis per OBS-3; C6 with hl = 1); (4) done
-when `scripts/check.sh` is ALL GREEN with zero sorry and at least one `decide`-checked sanity
-theorem holds. Commit `[P1][CLAIM-0004] …`; then P1.2 proves the CLAIM-0004 corollaries.
-Watch-out: "L-series < 1/9" needs K's *domain* (largest candidate below 1/8 is 1/9), not
-C1+C5 alone (HANDOFF Session 4, BELIEF DELTAS).
+### Executor's notes from Session 7 (the Gate G0 exam)
+
+The executor's, not rulings. Al had not read them when the commit that added them was made.
+
+1. *The record.* On 2026-11-22 UTC (harness version 2.1.322) Session 7's record was where note
+   3 below puts it. Five records preceded the launching message, of types `mode`,
+   `permission-mode`, `session-owner`, `file-history-snapshot` and `atis-latch`. Note 3 lists
+   the first four. None is a user or assistant message.
+2. *The working directory.* Session 7 was started outside the repository. Its first shell
+   command changed directory into it, and the harness's primary working directory moved there.
+   The scratch path did not move, and with it the session identifier and the record's place.
+3. *The memory reading, twice.* Note 1 below puts step 1 before HANDOFF, CLAIMS and DECISIONS
+   are read, and the paragraph on ruling B wants the reading checked against the state the repo
+   holds. Session 7 made the reading at step 1 against this file, made it again after the walk,
+   and recorded both.
+4. *D3, shown.* Session 7's disclosure recorded the size, modified time and SHA-256 of each
+   memory file it opened, and its HANDOFF block records the same values taken again at the end
+   of the session.
+5. *A script's own files.* Session 7's disclosure script read a file that the session had
+   written: its transcription of the index lines, which the script compared with the lines on
+   disk before it appended. Whether the §6 prompt's "no other command or file read" allows that
+   is among the calls put to Al (Standing escalations). Until he rules, a session that wants
+   such a check can hold the comparison text inside the script.
 
 ## The cold-start exam: readings, notes, and Al's rulings on FRIEDMAN's exam (K6)
 

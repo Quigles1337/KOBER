@@ -595,3 +595,440 @@ ESCALATIONS:
   line says.
 STOP-REASON: blocker requiring Al — the next action is an exam that only a cold session can run,
   and only Al can launch one. Default branch green.
+
+---
+
+SESSION: 2026-11-22 UTC @ 44c0b45 + this commit (Session 7 — the Gate G0 cold-start exam, in a
+cold session launched with the §6 Session-N prompt verbatim. PASS: Gate G0 CLOSED and Phase 1
+opened at P1.1. The closing rests on calls named below for Al to overrule)
+
+MEMORY DISCLOSURE (ADR-0003 D2; Al's rulings K3 and K4). First entry of this block.
+
+Appended by a script started at 2026-11-22T19:53:28Z (this machine's clock, UTC), before any
+command or file read other than these: PROGRAM/KOBER-PROGRAM.md and
+PROGRAM/DECISIONS/ADR-0003.md, each read in full, and the two memory files named below. The
+existing contents of this file were not read. The append opened it for appending without
+creating it (Node v22.23.1: fs.openSync with O_WRONLY | O_APPEND, then fs.writeSync) and
+asked the file system nothing else about it. Every line inside a fence below was copied from a
+memory file by that script, with carriage returns stripped; no line inside a fence was typed.
+The script, and a transcription file it compares against (see 1), were written to the
+session's scratch directory, outside this repository and outside the memory store.
+
+The store. At session start the harness put one memory index into the session's context and
+named the file it came from:
+
+    C:\Users\LEET\.claude\projects\C--Users-LEET\memory\MEMORY.md
+
+That index is the memory the harness loaded, and its directory is the one store. The session
+opened two files in that directory, both before this append, and no other memory file and no
+other store: MEMORY.md (the loaded index, read again from disk by the script so that its lines
+are copied and not typed) and project_kober.md (this program's own memory file, ADR-0003 note
+2; read once with the harness's file-read tool, then by the script). As the script read them,
+the SHA-256 being of each file's bytes as stored:
+
+    MEMORY.md
+      bytes:    20042
+      modified: 2026-11-22T01:46:57.731Z (the file system's time, UTC)
+      SHA-256:  7e74ab1cb3b2efcdda278cc9a7a3ca4b8674d2649bdf4f1609f7cd8b97d5d453
+    project_kober.md
+      bytes:    2243
+      modified: 2026-08-25T19:22:03.864Z (the file system's time, UTC)
+      SHA-256:  b093bc495be4bedc56f421c2cc6852dab6a66ab5b621a108cbf49112ed64f7d6
+
+1. Index lines reproduced verbatim: every line of MEMORY.md that names KOBER, FRIEDMAN,
+FR13DMAN or SYNDEOM in any letter case (each line tested against
+/kober|friedman|fr13dman|syndeom/i). Lines reproduced, in file order: 6.
+
+```text
+## KOBER (Linear A falsification infrastructure)
+- [Repo pointer + machine hazards](project_kober.md) — `C:\Users\LEET\KOBER`, remote `Quigles1337/KOBER` (**public**); the constitution `PROGRAM/KOBER-PROGRAM.md` is the sole authority — always run its §4 loop from the repo, never from memory. No program state is recorded here or in the linked file (memory-policy ADR).
+## FR13DMAN (FRIEDMAN — designedness-detection instrument)
+- [Repo pointer + machine hazards](project_friedman.md) — `C:\Users\LEET\FR13DMAN` / `Quigles1337/FR13DMAN` (**public**, leetspeak name); sibling of KOBER; the constitution `PROGRAM/FRIEDMAN-PROGRAM.md` is the sole authority — always run its §4 loop from the repo, never from memory. No program state is recorded here or in the linked file (ADR-0003).
+## SYNDEOM (AI-proof calibration — third sibling of KOBER/FRIEDMAN)
+- [Repo pointer + machine hazards](project_syndeom.md) — `C:\Users\LEET\Syndeom` / `Quigles1337/Syndeom` (**public**); the constitution `PROGRAM/SYNDEOM-PROGRAM.md` is the sole authority — always run its §4 loop from the repo, never from memory. No program state is recorded here or in the linked file (SD15 / FR13DMAN ADR-0003).
+```
+
+Before appending, the script compared these lines with the session's transcription of the same
+lines from the copy in its context, and was written to stop without appending if they
+differed. They did not differ. The transcription was used for that comparison only.
+
+2. Index lines withheld, given by count: 118.
+They are lines about other programs, this machine and the user, which are not this
+repository's to publish. How the count was taken: the script decoded the file as UTF-8
+(byte-order mark: none), split it on line feeds, dropped the empty piece after the final line feed,
+and stripped carriage returns (found on 0 lines).
+Lines in the file: 124.
+Lines that matched and are reproduced above: 6.
+Lines that did not match and are withheld: 118, of which 81 hold text and 37 are empty.
+
+3. This program's own memory file, project_kober.md, reproduced whole.
+Lines: 40. Byte-order mark: none. Carriage returns: found on 0 lines, stripped.
+The lines holding only --- inside the fence are the frontmatter delimiters of that file, not
+block separators of this one.
+
+```text
+---
+name: project-kober
+description: "KOBER program - repo C:/Users/LEET/KOBER; constitution and ALL program state live IN the repo, never here"
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: 9c3fd148-2517-4d33-841b-47b145a06320
+  modified: 2026-08-25T00:00:00.000Z
+---
+
+**KOBER** - repo `C:\Users\LEET\KOBER`, remote `https://github.com/Quigles1337/KOBER` (**public**).
+
+This file locates the repo and records machine hazards. Per the memory-policy ADR it records NO
+program state: no phase, gate, claims, commits, toolchain versions, escalations, or next actions.
+
+**Standing rule:** the repo is the sole memory of the program (constitution at
+`PROGRAM/KOBER-PROGRAM.md`). Every session: read the constitution, then run the section 4 loop
+from `PROGRAM/STATE.md` and `PROGRAM/HANDOFF.md`. Never resume from this file. Discover the
+default branch, toolchain, and every other value from the repo - never assume one, and never
+carry a value across from the sibling program.
+
+**Hard invariant (kept deliberately; a standing prohibition, not state):** KOBER never proposes
+a decipherment.
+
+**Never work in the sibling FRIEDMAN tree** - identical `PROGRAM/` schema, and its sessions may
+be live concurrently.
+
+Machine and harness hazards:
+- elan resolves the Lean toolchain from the current directory; `lake --dir` is not sufficient,
+  so cd into the Lean directory before invoking it.
+- poppler lives at `C:\Users\LEET\tools\poppler-26.02.0\poppler-26.02.0\Library\bin` and is on
+  the user PATH (the winget source is broken - InternetOpenUrl).
+- ScienceDirect and academia.edu return 403 to tool fetches; the Crossref API and institutional
+  repositories work.
+- A bare `cat > file` with no heredoc blocks on open stdin (cost a 10-minute timeout); attach the
+  heredoc directly or add `</dev/null`, and pass commit messages via `-F file`.
+- `git symbolic-ref refs/remotes/origin/HEAD` may fail on a working copy that was init-ed then
+  remote-added; fallback `git remote show origin`, or repair with `git remote set-head origin -a`.
+- This machine has autocrlf active and MSYS grep reports false carriage returns; CRLF conversion
+  can silently break byte digests. Verify line endings with `git ls-files --eol`, never by eye.
+```
+
+End of the disclosure. The provisional header above is completed after orientation; the
+disclosure is not changed. The session's record continues below.
+
+STANDING (the cold-start exam, step 1). Recorded 2026-11-22T19:57:06Z below the disclosure, which is
+unchanged (6963 bytes, SHA-256 a98390e5fdb35cd0324a250c5bbcb4d29069e001c8549185d9a8bf7921a2bf90).
+
+After the disclosure the session ran the three §4.1 commands (with `git branch -vv` and
+`git ls-files --eol PROGRAM/HANDOFF.md`) and read PROGRAM/STATE.md. That is where it learned
+that it is the Gate G0 exam and that this step exists (STATE, note 1). Between the disclosure
+and this record it read nothing else in the repository, and outside it only its own
+conversation record, as (a) describes. The tree this exam tests is the tip of master:
+
+    44c0b45be44043cc63c43bbfbf8712f936318acc
+    committed 2026-11-22T19:48:17Z (2026-11-22T14:48:17-05:00 as git prints it)
+
+(a) The launching message, verbatim. Copied by script from the harness's record of this
+conversation: one JSON-lines file named for the session identifier, in the directory that
+holds the memory directory. The identifier, 74129a80-8828-4fa8-a128-a93ff6c33ce0, is the folder
+above `scratchpad` in the scratch path the harness names. The file was opened by its exact
+name; nothing in that directory was listed, and no other record was opened. Every record in
+it that carries a sessionId carries that one. The launching message is the first record of
+type `user` (record 6 of the file): parentUuid null, turnPosition promptIndex 1 and
+turnIndex 1, origin human, timestamp 2026-11-22T19:50:14.130Z, harness version 2.1.322,
+cwd C:\Users\LEET. The 5 records before it are of these types, none of them a user or
+assistant message:
+
+    mode, permission-mode, session-owner, file-history-snapshot, atis-latch
+
+(STATE's note 3 lists four types for Session 6's record; `atis-latch` is the one it does not
+list.) The record holds the message as one string of 1083 characters: the text below, between
+the opening and closing tag lines of a paste wrapper (`<pasted_content id="dbaf">`), with only
+white space outside the wrapper. By STATE's first reading the wrapper is not the message. The
+text between the tag lines:
+
+```text
+Before anything else, make the memory disclosure that ADR-0003 requires: read
+PROGRAM/KOBER-PROGRAM.md and PROGRAM/DECISIONS/ADR-0003.md in full, read the executor memory they
+tell you to disclose, and append the disclosure as the first entry of a new block at the end of
+PROGRAM/HANDOFF.md, whether or not this session will attempt a gate's cold-start test, and with no
+other command or file read first. Append it without reading HANDOFF's existing contents (a shell
+append or a script, not a file-editing tool that reads the file first), under a provisional block
+header that carries the UTC date and that you complete after orientation without changing the
+disclosure. You are the executor of the KOBER program. Having disclosed, run the metacognitive loop
+(§4) exactly: ORIENT from the repo (state files are claims; builds are evidence), ASSESS, PLAN one
+thing, EXECUTE under the §1 constitution, VERIFY, RECORD+REFLECT per the §4.5 schema, and stop clean
+per §4.6. Honor escalations — some decisions are Al's, not yours.
+```
+
+Compared by script with the Session-N block of §6 in PROGRAM/KOBER-PROGRAM.md (the lines
+between the fence lines under `### Session N — resume`, working tree at the tip above):
+identical, character for character: 1025 characters, 1031 bytes as UTF-8 with line
+feeds, SHA-256 441207184fbbb0ab9e681242f5ead7c1bf15cb298450552bfc15f1dda749a91d for both.
+The message carries nothing beyond §6's text.
+
+Harness attachments (first reading). In the session's context, though not in that record's
+message string, the harness placed blocks of its own around the message: the memory index
+(disclosed above), the account's e-mail address, a note on commit attribution, the lists of
+tools, skills and agent types, and facts about the environment (working directory
+C:\Users\LEET, not a git repository; platform; the date). Only the memory index concerns this
+program.
+
+(b) Prior turns: none. The launching message is the first message of the conversation, by the
+record (parentUuid null, prompt 1, turn 1, no user or assistant record before it) and by the
+session's own context.
+
+(c) Is any disclosed memory program state (ADR-0003 D1)? The session's reading: none is. It
+went through D1's list (phase, gate status, CLAIM statuses, file contents, commit SHAs as state
+markers, next actions, escalations) against the six index lines and project_kober.md, and
+against what STATE says the state is. The disclosed memory states none of them. This reading
+is made here, with the constitution, ADR-0003 and STATE read. It is made again after the walk,
+when HANDOFF, CLAIMS and the other ADRs have been read, and the second reading is recorded with
+the walk. The closest calls, named so that Al can overrule them (ruling B on FRIEDMAN's Session
+7 is the precedent for the first four kinds):
+
+  1. The remote is called public: in the KOBER, FR13DMAN and SYNDEOM index lines and in
+     project_kober.md. Visibility is a fact about the remote, and D1 lets memory hold the
+     remote.
+  2. Sentences of the constitution restated as standing rules in project_kober.md: the repo is
+     the sole memory (§0.4), every session runs the §4 loop from STATE and HANDOFF, KOBER never
+     proposes a decipherment (§0.2). The KOBER index line restates the first two.
+  3. The front matter of project_kober.md: a harness session identifier and a modified date of
+     2026-08-25.
+  4. Hazards worded so that they imply history: there is a Lean directory to cd into; poppler
+     was installed; ScienceDirect and academia.edu refused tool fetches where the Crossref API
+     and institutional repositories answered; a bare `cat > file` cost a ten-minute timeout;
+     the working copy was init-ed and then remote-added, so that `git symbolic-ref` may fail;
+     byte digests are in use and CRLF conversion can break them. The fifth of these is the
+     same fact as the ORIENT note in STATE's header. The session reads it as a tooling hazard
+     with its fallback: it does not say what the default branch is.
+  5. Not one of ruling B's four kinds. The memory gives a decision record as its reason for
+     holding no state: the KOBER index line and project_kober.md cite a memory-policy ADR, the
+     FR13DMAN line cites that program's ADR-0003, and the SYNDEOM line cites a rule of its own
+     and FR13DMAN's ADR-0003. That names a record and, for the siblings, its number. It gives
+     no status, and no content beyond the rule itself, which is D1. The session reads it as a
+     pointer, not state.
+  6. The instruction in project_kober.md never to work in the sibling FRIEDMAN tree, with its
+     reasons (the same PROGRAM/ schema; sessions that may be live at the same time). It is a
+     hazard about another tree, and it restates §3's layout as true of the sibling.
+
+The 118 withheld index lines are in the session's context, because the harness loaded the
+whole index. None names this program in any letter case (the script's test), and the session
+reads none of them as being about it. Many hold state of the programs they are about; that is
+not this program's state.
+
+(d) The builder's context (K2). This conversation began with the launching message. The
+session built none of the state under test: master's tip was committed before the message was
+sent (times above), and the session has changed nothing in the repository but the end of this
+file.
+
+(e) The disclosure order (third reading) and the append (ADR-0003, notes 3 to 5). Before the
+append the session read the constitution and ADR-0003 in full and project_kober.md, each with
+the harness's file-read tool, and ran one command: the disclosure script. The append opened
+HANDOFF for appending without creating it and asked the file system nothing else about it: no
+existence test, no size, no read. Three things the session did that the prompt does not name.
+It reads them as parts of the script that the prompt allows, and names them for Al to judge:
+
+  1. Before running the script the session wrote two files to its scratch directory: the
+     script, and its own transcription of the six index lines from the copy in its context.
+     The script read the transcription and compared it with the lines on disk (disclosure,
+     1). So the script read one file that is not the constitution, ADR-0003 or a memory file.
+     Everything in that file came from the session's own context, and nothing new could reach
+     the session through it.
+  2. The script asked the file system for the size and modified time of the two memory files
+     (not of HANDOFF) and recorded them in the disclosure with a SHA-256 of each, so that a
+     later write to memory can be detected (D3).
+  3. The script wrote a copy of the bytes it was about to append to the scratch directory, for
+     the check that the disclosure is unchanged when the header is completed.
+
+After the append, `git ls-files --eol PROGRAM/HANDOFF.md` gave `i/lf w/lf`: the working file
+has line feeds only.
+
+RESULT OF STEP 1: not disqualified. The message carries nothing beyond §6's text; no turn
+preceded it; the session reads no disclosed memory as program state; the session is not in a
+conversation context that built this state. The calls in (c) and (e) are Al's to overrule. The
+exam goes on to step 2.
+
+THE WALK (the cold-start exam, step 2). Recorded 2026-11-22T20:04:13Z.
+
+Order, as STATE's step 2 and its note 1 give it: the §4.1 git commands; PROGRAM/STATE.md; step
+1 (above); PROGRAM/HANDOFF.md, the last entry before this block (Session 6) and then Sessions
+4 and 5, which STATE's cold-start row cites; PROGRAM/CLAIMS.md, all six entries in full;
+ADR-0000, ADR-0001 and ADR-0002 (ADR-0003 was read before the disclosure); PROGRAM/SOURCES.md;
+analysis/R0.md and analysis/P0.2-constraint-system.md in full; scripts/check.sh, the workflow,
+the pins and the scaffold sources; README.md; then the build and the remote.
+
+What the repo says the state is, and what was found:
+
+- Repository. Top level C:/Users/LEET/KOBER; origin = https://github.com/Quigles1337/KOBER.git;
+  branch master at 44c0b45, and the same commit on the remote (`git ls-remote origin`: HEAD and
+  refs/heads/master). `git symbolic-ref refs/remotes/origin/HEAD` gave
+  refs/remotes/origin/master with no fallback needed. `git status`: PROGRAM/HANDOFF.md modified
+  by this session's append and nothing else; nothing untracked; ignored, lean/.lake/ and
+  target/. `gh repo view`: PUBLIC, default branch master. As STATE says.
+- Phase and gate. STATE: Phase 0, Gate G0 open on the cold-start test alone, the next action
+  this exam. HANDOFF Session 6 says the same, and nothing in the tree contradicts it.
+- Build. `bash scripts/check.sh` printed ALL GREEN at 44c0b45: Lean 4.33.1, the pin in
+  lean/lean-toolchain (`lake build` completed, 4 jobs); `cargo test`, 1 passed; `cargo clippy`
+  at -D warnings, clean. It is the script that ADR-0002 and STATE name.
+- CI. `gh run list -R Quigles1337/KOBER --branch master --limit 3`: workflow `check`, success,
+  for 44c0b45 (run 45062828893, a push, 2026-11-22T19:48:26Z; one job, `gate`, 10 steps, each
+  a success), and before it for f94bec2 (run 32890264336) and 0e1ac18 (run 32879934732), the
+  two runs that STATE and HANDOFF cite. STATE's CI line names f94bec2: it lags the last push by
+  one run, as it says it does.
+- The Gate G0 rows, each evidence link followed:
+  1. CLAIM-0001 VERIFIED. The entry and its 2026-08-22 transition are in CLAIMS. SOURCES S-0001
+     gives the citation, the licence and two digests, and `sha256sum` of the two stored files
+     under sources/ reproduces both (b08c5635… for the PDF, 7dc89d5e… for the Crossref record).
+  2. R0 enumerated. analysis/R0.md holds R0-agg (§3), R0-named (§4, with the damage notation
+     of §1 and the editions of §2 as S-0001 cites them) and the variants R0a to R0d (§5).
+     CLAIM-0003 is VERIFIED.
+  3. Informal theorem stated. CLAIM-0004, 0005 and 0006 are in CLAIMS as proof targets, each
+     UNKNOWN. The extraction's §0 and §7 say why uniqueness from the constraints is not
+     claimed.
+  4. Scaffolded and green. ADR-0001 (Lean v4.33.1, no Mathlib) agrees with lean/lean-toolchain
+     and with the empty package list in lean/lake-manifest.json. ADR-0002 agrees with
+     rust-toolchain.toml (1.91.0, clippy), the workspace and its one crate engine/,
+     scripts/check.sh and the workflow. Green: above.
+  5. Licence notes. SOURCES has S-0001 (INGESTED, CC BY-NC-ND 4.0) and S-0004 (SURVEYED,
+     CC BY-NC-SA 4.0; R0 §4 records three pages fetched as links only), and S-0002, S-0003 and
+     S-0005 (SURVEYED; terms not established or UNKNOWN, each with the E10 no-ingestion rule).
+  6. The cold-start test: this exam.
+- Checked beside them. Nine commits that HANDOFF and STATE cite are ancestors of master
+  (f94bec2, 0e1ac18, e279df1, 06beff9, 70525f9, bbe0e44, dfcb8de, c9a3f65, 5f98231;
+  `git merge-base --is-ancestor`). The constitution's SHA-256 and size are what HANDOFF Session
+  6 records for them (52a2914e…, 18,565 bytes). A scan of lean/ for `sorry` and `admit`
+  matches one doc comment in lean/Kober/Basic.lean and nothing else. `git ls-files --eol`:
+  every text file is w/lf, the stored Crossref JSON w/none, the PDF binary. The references in
+  the staged P1.1 text resolve: extraction §3 and §5, flag A-1, OBS-3, ADR-0001, and the first
+  belief delta of HANDOFF Session 4.
+
+Guesses about the program: none. At no point did the session have to supply a fact about the
+program's state that the repo did not give it.
+
+One slip, named for Al to weigh. In the command that listed the tracked files the session also
+ran `ls lean rust`: it assumed a directory name (E7). There is no `rust` directory. The crate
+is engine/, as ADR-0002 says and as the `git ls-files` output of that same command showed.
+Nothing was built on the assumption and no part of the reconstruction depended on it. The
+session reads it as a careless command of its own, not as a point where the repo left it to
+guess. Al may read it otherwise.
+
+Places where the repo did not say how to do a thing (STATE, note 7), for Al to weigh:
+
+  1. When the memory reading is made. STATE's note 1 puts step 1 after STATE and before
+     HANDOFF, CLAIMS and DECISIONS. Its paragraph on ruling B says the reading is made after
+     orientation, so that it can be checked against the state the repo holds. The session made
+     it at step 1 against STATE, and again below against everything it read.
+  2. What the disclosure script may do besides copy and append. ADR-0003's notes give the
+     calls for the append and the rule for bytes. They do not say whether the script may read
+     a file of the session's own, or ask for a memory file's size and time. The session's
+     script did both: STANDING, (e).
+  3. Where the three steps live once the gate is closed. STATE says the passing session keeps
+     them. They stood under NEXT-SINGLE-ACTION, which is now P1.1. The session moved them,
+     unchanged and by script, into a section of their own beside the exam section.
+  4. How a session shows that it wrote no memory (D3). Nothing says. The disclosure records
+     each opened memory file's size, modified time and SHA-256, and the same three are taken
+     again at the end of this block.
+  5. The harness's record held five records before the launching message, where STATE's note
+     3 lists four types for Session 6's. The fifth type is `atis-latch`. It is not a message.
+  6. The harness's working directory. The session was started in C:\Users\LEET. Its first
+     `cd` into the repository moved the harness's primary working directory there. The scratch
+     path and the conversation record stayed where note 3 puts them.
+
+The memory reading, made again after the walk (STANDING, (c)). It stands: no disclosed line is
+program state. Each hazard in project_kober.md has a counterpart that the repo records as
+history: the elan hazard in the comment in scripts/check.sh; poppler's location and the
+ScienceDirect 403 in SOURCES S-0001; the academia.edu 403 in S-0003; the symbolic-ref hazard
+in STATE's header; the line-ending hazard in .gitattributes. In memory each is worded as a
+hazard of this machine and gives no phase, gate, CLAIM status, commit, next action or
+escalation. For comparison, the index line that voided the Session-4 pass, which HANDOFF
+Session 5 reproduces, named the branch, the sessions already run and the next session's first
+act. Nothing of that kind is in the lines disclosed above. From memory the session took the
+repository's location, and nothing else that the walk rests on.
+
+VERDICT (step 3): PASS. The program state was re-derived from the repo alone, following §4.1,
+in one pass, without a guess about the program. Gate G0 is marked CLOSED as of 2026-11-22 UTC
+at 44c0b45, the tree the test passed on, and Phase 1 is opened with NEXT-SINGLE-ACTION = P1.1
+as staged. The verdict is the examinee's own. It rests on the readings in STANDING (c) and (e)
+and on its reading of the slip and the six places above. They are Al's to overrule, and if he
+overrules one the gate reopens by a new commit, as it did on 2026-08-25.
+
+PHASE / GATE: Phase 0 → Gate G0 CLOSED this session (2026-11-22 UTC, at 44c0b45), subject to
+  Al's judgment of the calls named above. Phase 1 — THEOREM opened; Gate G1 open, nothing done
+  yet.
+ADVANCED:
+- The memory disclosure first (ADR-0003 D2), then §4.1 ORIENT, then the exam STATE set as
+  NEXT-SINGLE-ACTION: step 1 (STANDING: not disqualified), step 2 (THE WALK: no guess about the
+  program), step 3 (VERDICT: PASS). One thing, as §4.3 asks.
+- STATE rewritten for the result, by script from STATE at 44c0b45. New text: the header
+  (Phase 1; G1 open; G0 CLOSED with date and SHA; the launch line now names Sessions 6 and 7;
+  the build line names this session's checks and the tip's CI run); the cold-start row of the
+  G0 table (done, with its history); the G1 heading; Blockers (none); the open escalation
+  (Al's judgment of this exam); NEXT-SINGLE-ACTION = P1.1 with a pointer of this session's
+  after the staged text; a section that keeps the three exam steps, and five notes from this
+  session under it. Carried unchanged, and checked by script to be present line for line: the
+  default-branch line, the memory-policy section, the first five G0 rows, the G1 table and its
+  sequencing caveat, Al's rulings K1 to K8, the three closed or carried escalations, the
+  staged P1.1 paragraph, the two paragraphs and three steps of the exam, and the whole section
+  of readings, notes and rulings A to D.
+- No CLAIMS transition: none was earned. CLAIMS.md, SOURCES.md, the constitution, the four ADRs
+  and all code are untouched. Files changed: PROGRAM/HANDOFF.md (this block appended and its
+  header completed; no byte before the block changed) and PROGRAM/STATE.md.
+- Memory (D3): none written. The two memory files the disclosure covers, taken again when this
+  part of the block was appended, are as the disclosure records them:
+    MEMORY.md: 20042 bytes, modified 2026-11-22T01:46:57.731Z, SHA-256 7e74ab1cb3b2efcd…
+    project_kober.md: 2243 bytes, modified 2026-08-25T19:22:03.864Z, SHA-256 b093bc495be4bedc…
+  No other memory file was opened at any point, and no other store.
+BELIEF DELTAS:
+- At the start the session knew only that a disclosure was owed. That it was the Gate G0 exam
+  it learned from STATE, after it had appended. Evidence: the order of this block. That is K3's
+  reason for disclosure-first, seen from inside.
+- ADR-0003's five notes were enough to disclose without a guess: which memory, the own file
+  opened before the append, LF bytes, the form of the block, a call that appends without
+  creating. Evidence: one run of one script; `git ls-files --eol` gave i/lf w/lf afterwards.
+- The memory store is as HANDOFF Session 5 says the purge left it: location and hazards.
+  Evidence: the disclosure; project_kober.md was last modified on 2026-08-25.
+- A pointer for P1.1, not adjudicated. The Table-1 combination list in extraction §3 includes
+  `H H H` (CHIC #068.r.A) and two `*180` ligatures (MA 4). R0 §3 and R0a in §5 say that S-0001
+  did not use them in Simulation 2. The staged P1.1 text says "Table-1 attested combinations"
+  and "conditional on R0a"; the two have to be read together to get the combination set for
+  C2 to C4. STATE now carries the pointer after the staged text.
+- STATE's CI line lagged by one run again, as it says it does, and its note 3 was one record
+  type short for this harness version on this day.
+CONFUSIONS:
+- `ls lean rust`: a path assumed where E7 says to read it. Cost: one error line. No doc fix is
+  owed, because the repo already says where the crate is; the fix is the habit.
+- Whether the script's comparison against a transcription was worth a file read of the
+  session's own before the append, under a prompt that says "no other command or file read
+  first". The session judged a script's own data file to be part of the script. Cost: a call
+  for Al to judge. Doc fix: note 5 of Session 7's notes in STATE (hold the text in the script).
+- When to make the memory reading (the first of the six places). Cost: a second reading. Doc
+  fix: note 3 of Session 7's notes in STATE.
+HONESTY CHECK: CLAIM-0001 to 0006 re-read in full. Statuses are as STATE and HANDOFF Session 6
+  give them (0001 to 0003 VERIFIED, 0004 to 0006 UNKNOWN). No transition and no downgrade.
+  Re-examined: CLAIM-0001's two digests, reproduced; CLAIM-0003's description of R0.md against
+  the file, which matches; CLAIM-0002's figures against the extraction's §0 and §7, which
+  match. The stored PDF itself was not re-read, so that last check is register against
+  extraction and not register against source. The PASS is recorded by the session that sat the
+  exam. That is the procedure, and it is why every call is named for Al.
+DRIFT CHECK: clean. Gate verification and documentation only: no sound value, no claim about
+  what any tablet says. Scope refused: a line-ending check for PROGRAM/ in the gate (Al: it can
+  wait); starting P1.1 in the session that closed the gate; any memory write (D3); naming in
+  this public file anything from the withheld lines.
+NEXT-SINGLE-ACTION: see STATE.md. P1.1: formalize the constraint system as Lean data
+  conditional on R0a, to the file-level specification staged there.
+ESCALATIONS:
+- Al: judge the exam. The calls are in STANDING (c) and (e) and in THE WALK (the slip; the six
+  places). Gate G0 is recorded CLOSED on the session's own readings. STATE lists this as the
+  one open escalation.
+- CI for this commit is confirmed by this session after the push and reported to Al in the
+  conversation. The repo's record of it is made by the next session at ORIENT, as STATE's
+  build line says.
+- Carried, not open: the CLAIM-0005/0006 sequencing caveat under the G1 table in STATE. It is
+  decided when P1.2 reaches CLAIM-0005, not before.
+STOP-REASON: gate reached (G0 CLOSED), a §4.6 stop condition. Default branch green:
+  `bash scripts/check.sh` prints ALL GREEN on the tree of this commit.
+HEADER: completed after the block was written. The one provisional line (`SESSION: 2026-11-22
+UTC (provisional header, completed after orientation)`) was replaced by the three header lines
+at the top of this block, and nothing else was changed. Checked by script: the 44,192 bytes
+before the header (this file at 44c0b45 and the separator) and the 30,002 bytes after it, from
+the empty line under the header to the end of STOP-REASON, are byte for byte what they were.
+The 6,963 bytes whose SHA-256 the STANDING record gives included the provisional line. The
+disclosure after its header line is 6,883 bytes, SHA-256
+7ff2f387c03c41de2a2faea6a3c4fd0c82c3bcbb030bb3e5271813789f7499e6, before and after.
