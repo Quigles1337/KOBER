@@ -1,12 +1,13 @@
 # STATE
 
-- **Updated:** 2026-11-22 UTC (Session 7, close: the Gate G0 cold-start exam passed; G0 CLOSED;
-  Phase 1 opened at P1.1)
+- **Updated:** 2026-11-22 UTC (Session 8, first commit: Al's rulings K9–K14 recorded; the closing
+  of Gate G0 stands. The licence he ordered in the same message is in preparation and is not in
+  this commit: Standing escalations)
 - **Phase:** 1 — THEOREM (opened 2026-11-22 UTC by Session 7, when Gate G0 closed)
 - **Gate:** G1 **open**, nothing done yet (table below). Gate G0 **CLOSED 2026-11-22 UTC at
-  `44c0b45`**, the tree its cold-start test passed on. The closing rests on readings that the
-  exam session made of itself and named for Al to overrule (Standing escalations). If he
-  overrules one, G0 reopens by a new commit, as it did on 2026-08-25.
+  `44c0b45`**, the tree its cold-start test passed on. The closing rested on readings that the
+  exam session made of itself and named for Al to overrule. He ruled on them on 2026-11-22 UTC
+  (K9–K12, below) and overruled none: the closing of Gate G0 stands.
 - **Default branch:** `master`. Remote: `origin` = `https://github.com/Quigles1337/KOBER`
   (**public**; created by Al Session 3; CI = `.github/workflows/check.yml`).
   **ORIENT note (E7):** the constitution's `git symbolic-ref refs/remotes/origin/HEAD` failed
@@ -16,14 +17,14 @@
   source-of-truth fallback is `git remote show origin` (prints `HEAD branch: master`); do not
   guess.
 - **Launch (K8):** where Al launches a session from is his practice and not a condition of an
-  exam (ruled 2026-11-22 UTC). Sessions 6 and 7 were started in `C:\Users\LEET`, not in the
-  repository directory, and took the repo's location from the line for this program in the
+  exam (ruled 2026-11-22 UTC). Sessions 6, 7 and 8 were started in `C:\Users\LEET`, not in
+  the repository directory, and took the repo's location from the line for this program in the
   executor's memory index, which ADR-0003 D1 allows memory to hold.
 - **Build status:** "green" = `bash scripts/check.sh` prints `ALL GREEN` (lake build on Lean
   v4.33.1 + cargo test + clippy at deny-warnings; ADR-0002; the same script runs in CI). Last
-  verified locally 2026-11-22 UTC by Session 7: at `44c0b45`, and on the tree of the commit that
-  closes G0. CI: last known success on `master` @ `44c0b45` (run 45062828893,
-  2026-11-22T19:48:26Z; one job, `gate`, 10 steps). This line lags the last push by one run:
+  verified locally 2026-11-22 UTC by Session 8: at `00416bc`, and on the tree of the commit that
+  records K9–K14. CI: last known success on `master` @ `00416bc` (run 45064367979,
+  2026-11-22T20:04:53Z; one job, `gate`, 10 steps). This line lags the last push by one run:
   check `gh run list -R Quigles1337/KOBER --branch master` at ORIENT.
 
 ## Memory policy — ADR-0003
@@ -46,7 +47,7 @@ Session-N prompt verbatim and nothing that carries program state (the corollary,
 | Informal uniqueness theorem stated in CLAIMS (P0.4) | **done** | CLAIM-0004 (constraint corollaries), CLAIM-0005 (exact solution set, \|S\| = 3,794,740 — kernel-checked non-uniqueness), CLAIM-0006 (optimum characterization = the paper's actual claim); "uniqueness from constraints" deliberately NOT claimed (extraction §0/§7) |
 | Repo scaffolded and green (P0.5) | **done** | ADR-0001 (Lean v4.33.1 pinned, no Mathlib), ADR-0002 (layout, Rust 1.91.0 pin, `scripts/check.sh` gate, CI activated Session 3); gate ALL GREEN 2026-08-22 and 2026-08-25 (×2) |
 | SOURCES.md has license notes for every data source touched | **done** | Touched: S-0001 (INGESTED, CC BY-NC-ND 4.0) and S-0004 SigLA (three document pages fetched link-only, CC BY-NC-SA 4.0). Surveyed only: S-0002 (© EFA, terms not established), S-0003 (UNKNOWN), S-0005 (UNKNOWN) — each with the E10 no-ingestion rule. Resolved to done by Session 4 (reasoning: nothing touched lacks a license note; UNKNOWN *is* the E5/E10-mandated record). |
-| Cold-start test (§2) | **done — passed 2026-11-22 UTC at `44c0b45`** | Session 7, a cold session: launched with the §6 Session-N prompt verbatim as the first turn of a new conversation (ADR-0003, K2). It disclosed its memory first (D2), recorded its standing (not disqualified: it read no disclosed memory as program state), and walked §4.1 from the repo: git facts → this file → HANDOFF Session 6 (then Sessions 4 and 5) → CLAIMS → ADR-0000 to 0003 → SOURCES and `analysis/` → `scripts/check.sh` ALL GREEN and CI `check` success on the tip. No point required a guess about the program. Record: HANDOFF Session 7 (MEMORY DISCLOSURE, STANDING, THE WALK, VERDICT). The session named its closest calls for Al to overrule (Standing escalations). History: Session 4 recorded a pass on 2026-08-25 and the architects withdrew it the same day (the executor memory store held program state); Session 5 disqualified itself (it ran in the conversation that built Session 4's state); Session 6 made the exam runnable and neither ran nor rehearsed it (HANDOFF Sessions 4 to 6). |
+| Cold-start test (§2) | **done — passed 2026-11-22 UTC at `44c0b45`** | Session 7, a cold session: launched with the §6 Session-N prompt verbatim as the first turn of a new conversation (ADR-0003, K2). It disclosed its memory first (D2), recorded its standing (not disqualified: it read no disclosed memory as program state), and walked §4.1 from the repo: git facts → this file → HANDOFF Session 6 (then Sessions 4 and 5) → CLAIMS → ADR-0000 to 0003 → SOURCES and `analysis/` → `scripts/check.sh` ALL GREEN and CI `check` success on the tip. No point required a guess about the program. Record: HANDOFF Session 7 (MEMORY DISCLOSURE, STANDING, THE WALK, VERDICT). The session named its closest calls for Al to overrule; he ruled on them on 2026-11-22 UTC (K9–K12, below) and overruled none. History: Session 4 recorded a pass on 2026-08-25 and the architects withdrew it the same day (the executor memory store held program state); Session 5 disqualified itself (it ran in the conversation that built Session 4's state); Session 6 made the exam runnable and neither ran nor rehearsed it (HANDOFF Sessions 4 to 6). |
 
 ## Gate G1 exit criteria (Phase 1; open)
 
@@ -69,7 +70,8 @@ P1.2 reaches CLAIM-0005, not before. CLAIM-0004 has no such dependency.
 
 ## Blockers
 
-- None. Al's judgment of the Gate G0 exam is an open escalation (below), not a blocker.
+- None for P1.1 itself. Ahead of it stands the licence that Al ordered from Session 8, which is
+  committed only on his answer "accepted" (Standing escalations).
 
 ## Al's rulings K1–K8 of 2026-11-22 UTC (verbatim)
 
@@ -149,19 +151,85 @@ K8 (launch directory). Where I launch a session from is my practice and not a co
 Record it in STATE.
 ```
 
+## Al's rulings K9–K14 of 2026-11-22 UTC (verbatim)
+
+Given in the message that launched Session 8 (received 2026-11-22T20:11:09Z by the harness's
+record), on the state at `00416bc`, and copied here by script from the harness's record of that
+message, not typed. They are Al's judgment of the Gate G0 exam: the calls that Session 7 named
+for him to overrule (HANDOFF Session 7: STANDING (c) and (e), THE WALK). The last line of the
+block is the sentence that follows K14 in his message. The same message carries K15 and K16, on
+a licence for KOBER; they are recorded with the licence and not here. Everywhere in this file
+"K9" to "K14" mean these rulings.
+
+```text
+K9 (Session 7's memory reading). Accepted, all six calls. On the fifth: a memory line that names a
+decision record as its reason for holding no state is a pointer, and not program state.
+
+K10 (Session 7's disclosure order). Not a breach, in any of the three things. A disclosure script
+may read data that the session itself wrote for it, may take the size, modified time and digest of
+the memory files it discloses, and may keep a copy of its own bytes. The append asked the file
+system nothing about HANDOFF, as K4 orders.
+
+K11 (the slip). It is a slip and not a guess. The repo says where the crate is, and nothing was
+built on the wrong name.
+
+K12 (the six places where the repo did not say how). Accepted. None was a guess about the program.
+Session 7's five notes stay.
+
+K13 (the pointer after the staged P1.1 text). It stays as a pointer. P1.1 reads the two passages
+together, and if the combination set is a choice, the choice gets an ADR.
+
+K14 (a sixth note for ADR-0003). Add it after note 5, marked as my ruling of today, in these words:
+"Before the append, the session and its disclosure script read the constitution, this ADR and the
+memory being disclosed, and nothing else on the machine except data that the session itself wrote
+for the script. The script records the size, modified time and SHA-256 of each memory file it opens,
+and the session records them again at its end, to show that it wrote no memory."
+
+The closing of Gate G0 stands.
+```
+
+What they change here, in the executor's words. Where these and the rulings differ, the rulings
+govern.
+
+- **K9 to K12** judge Session 7's exam: its memory reading, the three things its disclosure
+  script did besides copy and append, the slip, and the six places where the repo did not say
+  how. None is overruled, and the closing of Gate G0 stands. The escalation that held those
+  calls is closed (Standing escalations).
+- **K9 and K10** each hold a sentence worded generally, which a later session can read as it
+  stands: a memory line that names a decision record as its reason for holding no state is a
+  pointer, and not program state (K9); a disclosure script may read data that the session itself
+  wrote for it, may take the size, modified time and digest of the memory files it discloses,
+  and may keep a copy of its own bytes (K10). For any other call of a later session, K9 to K12
+  are precedent for calls of their kinds, as rulings A to D are, and not acceptance in advance
+  (Al's answer to Session 6, in HANDOFF).
+- **K12** keeps the five "Executor's notes from Session 7", which stand under the three steps
+  of the exam, below.
+- **K13** is carried out under NEXT-SINGLE-ACTION: the pointer after the staged P1.1 text stays
+  a pointer, with the ruling beside it.
+- **K14** is note 6 of the notes for the session making a disclosure in ADR-0003, added by
+  Session 8 in Al's words.
+
 ## Standing escalations
 
-- **Open — Al's judgment of the Gate G0 exam (Session 7, 2026-11-22 UTC).** G0 is recorded
-  CLOSED on the exam session's own readings. HANDOFF Session 7 gives them in full and names
-  them for Al to overrule: (1) the memory reading, that no disclosed line is program state,
-  with six closest calls, the fifth of a kind that ruling B did not cover (the memory cites a
-  decision record as its reason for holding no state); (2) the disclosure order: before it
-  appended, the disclosure script read a transcription file that the session had written
-  itself, took the size and modified time of the two memory files, and wrote a scratch copy of
-  its own bytes; (3) one slip in the walk, a directory name assumed in a listing command, with
-  nothing built on it; (4) six places where the repo did not say how to do a thing. Rulings A
-  to D on FRIEDMAN's exam are precedent for calls of their kinds, not advance acceptance of
-  these (Al's answer to Session 6, in HANDOFF).
+- **Open — the licence (Session 8, 2026-11-22 UTC).** The message that carried K9–K14 also
+  orders a licence for KOBER, by an ADR of its own (K15), and a statement of what that licence
+  does not cover: the two stored files under `sources/`, and what the analysis files transcribe
+  from S-0001 (K16). Session 8 prepares it in the working tree after the commit that records
+  K9–K14 and stops before committing it; that commit is made only on Al's answer "accepted".
+  Until it is on `master`, KOBER carries no licence, and licence files found uncommitted in a
+  working tree are that unaccepted preparation: a successor does not commit them, and asks Al.
+- **Closed by K9–K12 (2026-11-22 UTC): Al's judgment of the Gate G0 exam (Session 7).** G0 was
+  recorded CLOSED on the exam session's own readings, which HANDOFF Session 7 gives in full
+  and named for Al to overrule: (1) the memory reading, that no disclosed line is program
+  state, with six closest calls, the fifth of a kind that ruling B did not cover (the memory
+  cites a decision record as its reason for holding no state); (2) the disclosure order:
+  before it appended, the disclosure script read a transcription file that the session had
+  written itself, took the size and modified time of the two memory files, and wrote a scratch
+  copy of its own bytes; (3) one slip in the walk, a directory name assumed in a listing
+  command, with nothing built on it; (4) six places where the repo did not say how to do a
+  thing. Al's rulings, verbatim above: K9 accepts (1), all six calls; K10 finds no breach in
+  (2); K11 reads (3) as a slip and not a guess; K12 accepts (4). The closing of Gate G0
+  stands.
 - **Standing rule, not a pending question:** publication packaging and announcement remain
   gated at P4.3 whatever the repo's visibility (§4.6).
 - **Closed by K7 (2026-11-22 UTC), recorded in HANDOFF Session 6: the pre-purge memory copies.**
@@ -187,6 +255,10 @@ Record it in STATE.
 below is the staged text, copied by script from this file at `44c0b45`, unchanged, label and
 all. Its label ("Staged … when G0 closes") is history: this is the action.
 
+Al's message to Session 8 keeps it so: P1.1 is the next action after the two things that
+message orders, the record of K9–K14 (Session 8's first commit) and the licence (Standing
+escalations, open).
+
 **Staged P1.1 (becomes NEXT-SINGLE-ACTION when G0 closes):** formalize the constraint system as
 Lean data conditional on R0a, in `lean/` (file names are suggestions; ADR-0001's design guidance
 governs; any ADR-worthy choice gets an ADR): (1) `lean/Kober/Frac.lean` — hand-rolled fraction
@@ -209,6 +281,11 @@ list in extraction §3 includes `H H H` (CHIC #068.r.A) and two `*180` ligatures
 S-0001 did not use in Simulation 2 (`analysis/R0.md` §3, and R0a in §5). The staged text's
 "Table-1 attested combinations" and "conditional on R0a" have to be read together to get the
 combination set for C2 to C4.
+
+Al's ruling on that pointer (K13, 2026-11-22 UTC), copied by script from his message:
+
+> K13 (the pointer after the staged P1.1 text). It stays as a pointer. P1.1 reads the two passages
+> together, and if the combination set is a choice, the choice gets an ADR.
 
 ## The cold-start exam: the three steps, as Gate G0's exam ran them
 
@@ -271,6 +348,11 @@ The executor's, not rulings. Al had not read them when the commit that added the
    disk before it appended. Whether the §6 prompt's "no other command or file read" allows that
    is among the calls put to Al (Standing escalations). Until he rules, a session that wants
    such a check can hold the comparison text inside the script.
+
+Al's rulings on these notes (2026-11-22 UTC; verbatim above). K12: the five notes stay. K10 is
+the ruling that note 5 waits for: a disclosure script may read data that the session itself
+wrote for it. K14 is now note 6 of the notes in ADR-0003, which a session reads before it
+appends; its second sentence is the practice that note 4 describes.
 
 ## The cold-start exam: readings, notes, and Al's rulings on FRIEDMAN's exam (K6)
 
