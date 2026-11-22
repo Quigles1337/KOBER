@@ -1,8 +1,9 @@
 # STATE
 
-- **Updated:** 2026-11-22 UTC (Session 8, first commit: Al's rulings K9–K14 recorded; the closing
-  of Gate G0 stands. The licence he ordered in the same message is in preparation and is not in
-  this commit: Standing escalations)
+- **Updated:** 2026-11-22 UTC (Session 8: Al's rulings K9–K14 recorded in `8a01621`, and the
+  closing of Gate G0 stands; KOBER licensed by ADR-0004 on his rulings K15 to K18. The removal
+  of the stored copy of the paper, which K17 orders, is a commit of its own and is not in this
+  one: Standing escalations)
 - **Phase:** 1 — THEOREM (opened 2026-11-22 UTC by Session 7, when Gate G0 closed)
 - **Gate:** G1 **open**, nothing done yet (table below). Gate G0 **CLOSED 2026-11-22 UTC at
   `44c0b45`**, the tree its cold-start test passed on. The closing rested on readings that the
@@ -22,10 +23,15 @@
   executor's memory index, which ADR-0003 D1 allows memory to hold.
 - **Build status:** "green" = `bash scripts/check.sh` prints `ALL GREEN` (lake build on Lean
   v4.33.1 + cargo test + clippy at deny-warnings; ADR-0002; the same script runs in CI). Last
-  verified locally 2026-11-22 UTC by Session 8: at `00416bc`, and on the tree of the commit that
-  records K9–K14. CI: last known success on `master` @ `00416bc` (run 45064367979,
-  2026-11-22T20:04:53Z; one job, `gate`, 10 steps). This line lags the last push by one run:
-  check `gh run list -R Quigles1337/KOBER --branch master` at ORIENT.
+  verified locally 2026-11-22 UTC by Session 8: at `00416bc`, at `8a01621`, and on the tree of
+  the commit that adds the licence. CI: last known success on `master` @ `8a01621` (run
+  45066086960, 2026-11-22T20:22:35Z; one job, `gate`, 10 steps). This line lags the last push
+  by one run: check `gh run list -R Quigles1337/KOBER --branch master` at ORIENT.
+- **Licence:** the PolyForm Noncommercial License 1.0.0, from the commit that adds `LICENSE`
+  (ADR-0004; Al's ruling K15 of 2026-11-22 UTC). Copyright is Al's, held personally. No licence
+  is granted for earlier commits. The licence does not cover third-party material: the two
+  stored files under `sources/`, and what the analysis files transcribe from S-0001, keep
+  their own terms (ADR-0004 D2; K16 to K18). The text and its provenance: `LICENSE`, S-0006.
 
 ## Memory policy — ADR-0003
 
@@ -70,8 +76,9 @@ P1.2 reaches CLAIM-0005, not before. CLAIM-0004 has no such dependency.
 
 ## Blockers
 
-- None for P1.1 itself. Ahead of it stands the licence that Al ordered from Session 8, which is
-  committed only on his answer "accepted" (Standing escalations).
+- None for P1.1 itself: K18 says that it goes ahead. Ahead of it stands the removal of the
+  stored copy of the paper (K17), which Session 8 prepares as a commit of its own and commits
+  only on Al's answer "accepted" (Standing escalations).
 
 ## Al's rulings K1–K8 of 2026-11-22 UTC (verbatim)
 
@@ -158,8 +165,8 @@ record), on the state at `00416bc`, and copied here by script from the harness's
 message, not typed. They are Al's judgment of the Gate G0 exam: the calls that Session 7 named
 for him to overrule (HANDOFF Session 7: STANDING (c) and (e), THE WALK). The last line of the
 block is the sentence that follows K14 in his message. The same message carries K15 and K16, on
-a licence for KOBER; they are recorded with the licence and not here. Everywhere in this file
-"K9" to "K14" mean these rulings.
+a licence for KOBER; they are recorded verbatim in ADR-0004 and not here. Everywhere in this
+file "K9" to "K14" mean these rulings, and "K15" and "K16" the two in ADR-0004.
 
 ```text
 K9 (Session 7's memory reading). Accepted, all six calls. On the fifth: a memory line that names a
@@ -209,15 +216,53 @@ govern.
 - **K14** is note 6 of the notes for the session making a disclosure in ADR-0003, added by
   Session 8 in Al's words.
 
+## Al's rulings K17 and K18 of 2026-11-22 UTC (verbatim)
+
+Given in Al's answer to the licence as Session 8 showed it to him (his second message in that
+conversation, received 2026-11-22T21:01:00Z by the harness's record), and copied here by script
+from the harness's record of it, not typed. They rule on the two things K16 put to him. Each is
+one line, as he sent it. They are also in ADR-0004, D2, and his whole answer is in HANDOFF,
+Session 8. Everywhere in this file "K17" and "K18" mean these rulings.
+
+```text
+K17 (the stored copy of the paper). It leaves the tree. I am going to ask the paper's authors, and it comes back only on my ruling. History is not rewritten: the commits that already hold the copy keep it. No other NC- or ND-licensed original is committed without my ruling.
+
+K18 (what the analysis files transcribe). It stays as it is, and P1.1 goes ahead. My SYNDEOM line on derived artifacts is not applied to KOBER: this program formalizes the paper's published result, and it states the paper's data and quotes its statements, with attribution, so that the formal statements can be checked against them. Whether that needs the authors' permission is my question and not the executor's, and I am asking them. I settle it before publication packaging (P4.3) or before I grant any commercial licence, whichever comes first. Until then a session quotes no more of the paper than checking a statement needs.
+```
+
+What they change here, in the executor's words. Where these and the rulings differ, the rulings
+govern.
+
+- **K17: the stored copy of the paper leaves the tree,** by a commit of its own (Standing
+  escalations). It comes back only on Al's ruling. History is not rewritten: the commits that
+  already hold the copy keep it.
+- **K17, a standing rule:** no other NC- or ND-licensed original is committed without Al's
+  ruling. It stands beside E10 and the rules at the head of SOURCES.md.
+- **K18: what the analysis files transcribe stays as it is, and P1.1 goes ahead.** Al's line
+  for SYNDEOM on derived artifacts is not applied to KOBER.
+- **K18, a standing rule until Al settles his question to the authors:** a session quotes no
+  more of the paper than checking a statement needs. It binds P1.1 and every session after
+  it. Whether the transcription needs the authors' permission is Al's question and not the
+  executor's. He settles it before publication packaging (P4.3) or before he grants any
+  commercial licence, whichever comes first.
+
 ## Standing escalations
 
-- **Open — the licence (Session 8, 2026-11-22 UTC).** The message that carried K9–K14 also
-  orders a licence for KOBER, by an ADR of its own (K15), and a statement of what that licence
-  does not cover: the two stored files under `sources/`, and what the analysis files transcribe
-  from S-0001 (K16). Session 8 prepares it in the working tree after the commit that records
-  K9–K14 and stops before committing it; that commit is made only on Al's answer "accepted".
-  Until it is on `master`, KOBER carries no licence, and licence files found uncommitted in a
-  working tree are that unaccepted preparation: a successor does not commit them, and asks Al.
+- **Open — the removal of the stored copy of the paper (K17; Session 8, 2026-11-22 UTC).** K17
+  orders the copy out of the tree, and Al's answer orders the removal prepared as a commit of
+  its own, after the commit that adds the licence, and committed only on his answer
+  "accepted". Until that commit is on `master`, `sources/corazza-etal-2021-jas-105214.pdf` is
+  in the tree. A removal found uncommitted in a working tree (the file deleted, and a copy of
+  it in `C:\Users\LEET\KOBER-sources\S-0001`, a local store that is not part of the
+  repository) is that unaccepted preparation: a successor does not commit it, and asks Al.
+- **Al's, and not the executor's: the authors' permission (K18).** Al is asking the paper's
+  authors. No session acts on it. What binds sessions meanwhile is K18's last sentence.
+- **Closed by K17 and K18 (2026-11-22 UTC): K16's two questions,** which Session 8 put to Al
+  at its stop with the facts (ADR-0004, Context): whether the stored copy stays in the tree,
+  and what in the analysis files is transcribed from the paper.
+- **Closed by Al's "accepted" (2026-11-22 UTC): the licence (K15).** ADR-0004, `LICENSE`,
+  README § Licence, S-0006 and the header's Licence bullet. Al accepted the eight readings in
+  ADR-0004 as written. HANDOFF Session 8 has his message and his answer.
 - **Closed by K9–K12 (2026-11-22 UTC): Al's judgment of the Gate G0 exam (Session 7).** G0 was
   recorded CLOSED on the exam session's own readings, which HANDOFF Session 7 gives in full
   and named for Al to overrule: (1) the memory reading, that no disclosed line is program
@@ -256,8 +301,10 @@ below is the staged text, copied by script from this file at `44c0b45`, unchange
 all. Its label ("Staged … when G0 closes") is history: this is the action.
 
 Al's message to Session 8 keeps it so: P1.1 is the next action after the two things that
-message orders, the record of K9–K14 (Session 8's first commit) and the licence (Standing
-escalations, open).
+message orders, the record of K9–K14 (`8a01621`) and the licence (ADR-0004). Both are done,
+and K18 says that P1.1 goes ahead. K18 also binds it: P1.1 quotes no more of the paper than
+checking a statement needs. Before P1.1 comes the removal of the stored copy of the paper
+(K17; Standing escalations).
 
 **Staged P1.1 (becomes NEXT-SINGLE-ACTION when G0 closes):** formalize the constraint system as
 Lean data conditional on R0a, in `lean/` (file names are suggestions; ADR-0001's design guidance

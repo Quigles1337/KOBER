@@ -1,4 +1,5 @@
 name = "kober"
+license = "PolyForm-Noncommercial-1.0.0"
 defaultTargets = ["Kober"]
 
 [[lean_lib]]

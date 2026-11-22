@@ -1279,3 +1279,272 @@ header (this file at `00416bc` and the separator) and the 5,980 bytes of the dis
 its header line, from the empty line under the header to "End of the disclosure.", are byte
 for byte what they were. SHA-256 of those 5,980 bytes, before and after:
 6fb26dbf03afabe61d021637340b720d91c6bd046215c2944d49f0e35b2ac639.
+
+AL'S MESSAGE, SECOND PART (verbatim): lines 45 to 68 of its 68, recorded here with the licence
+work, as the first part says. Copied by script from the same script-made copy of the message.
+
+```text
+Second, the licence.
+
+K15 (licence). The PolyForm Noncommercial License 1.0.0, under "Required Notice: Copyright 2026
+Alexander David Zalewski (https://github.com/Quigles1337/KOBER)", by an ADR of its own under the
+next free number. Follow FRIEDMAN's ADR-0005 as it stands at FR13DMAN commit
+2ffa3e7bd56087f79bdcfe4b9649e2d86844b305, so far as it applies to KOBER, and record that commit. The
+commercial-licence contact line is mine: "For commercial licensing, contact Alexander David Zalewski
+at adz@alphx.io." KOBER has carried no licence until now: state that, and grant none for earlier
+versions. As in FRIEDMAN's ADR-0005, SYNDEOM's D2(b) is not followed: nothing in KOBER is separately
+controlled. Retrieve the licence text yourself from the PolyForm project's own repository, pinned by
+commit, and record it in SOURCES.
+
+K16 (what the licence does not cover). KOBER holds third-party material that FRIEDMAN does not: the
+two stored files under sources/, and whatever the analysis files transcribe from S-0001. Each keeps
+its own terms, and the ADR states them. Before you write that part, read my ruling of 2026-10-13 on
+NC- and ND-licensed originals as Syndeom ADR-0003 D5 records it, with that ADR's line on ND licences
+and derived artifacts. That ruling was made for SYNDEOM. Do not apply it here by yourself: in this
+session move, remove and rewrite nothing under sources/ or analysis/. State in the ADR what holds
+for that material now, and at the stop put to me, with the facts, whether the stored copy stays in
+the tree and what in the analysis files is transcribed from the paper.
+
+Prepare the licence in the working tree, run the gate, and stop before the commit. Show me the ADR
+in full, the first lines of LICENSE and the README's licence section, and list every other file
+changed. Commit only when I answer "accepted"; then push, confirm CI and stop.
+```
+
+AFTER THE FIRST COMMIT. `8a01621` was pushed at once (`00416bc..8a01621`), and CI `check`
+succeeded for it (run 45066086960, a push, 2026-11-22T20:22:35Z; one job, `gate`, 10 steps,
+each a success).
+
+THE LICENCE (K15, K16): prepared in the working tree on top of `8a01621`, and shown to Al
+before any commit.
+
+What was read, and where. Nothing entered from memory (E5).
+- FRIEDMAN's ADR-0005, `LICENSE`, README, SOURCES and manifests at FR13DMAN commit
+  2ffa3e7bd56087f79bdcfe4b9649e2d86844b305, the commit K15 names, through the GitHub API. The
+  FR13DMAN working copy on this machine was not opened.
+- Syndeom ADR-0003 at the tip of `Quigles1337/Syndeom` `main`,
+  d6771abf49cc47902b245d2c7b71048d9d5078fe (GitHub API, 2026-11-22T20:23:26Z): its Status, D5,
+  the fourth flagged choice with Al's ruling of 2026-10-13, and the Consequences line on ND
+  licences. Read before D2 of ADR-0004 was written, as K16 orders, and not applied.
+- The PolyForm text, retrieved from the PolyForm Project's own repository and pinned at commit
+  a2316cfa35d3947fdc5af4bcc1f321662bfd79d8, with that repository's own terms and the SPDX
+  entry: S-0006.
+- The CC BY-NC-ND 4.0 legal code and Crossref's statement on the metadata its REST API returns:
+  the addition to S-0001.
+- In this repository: both analysis files in full; the fields of the stored Crossref record;
+  the text of the stored PDF (`pdftotext`, written outside the repository), to count what the
+  analysis files transcribe from it. The FLORE URL in S-0001 was fetched again and returned
+  the stored copy byte for byte.
+
+What was written. Nothing under sources/ or analysis/ was moved, removed or rewritten (K16).
+- `LICENSE` (new): K15's Required Notice line, one blank line, the PolyForm text unchanged.
+  4,660 bytes, SHA-256 bfcfd77d3cf20c785705de07a26be0f9176514e78394b9cdeb27221011dfcb5c.
+- `PROGRAM/DECISIONS/ADR-0004.md` (new): the licence ADR, under the next free number. K15 and
+  K16 verbatim; FRIEDMAN's D1 to D5 quoted and followed so far as they apply; Syndeom ADR-0003
+  D5 quoted and not applied; D1 to D5; eight readings of the executor's, put to Al.
+- `README.md`: a Licence section, after FRIEDMAN's, which also names the stored paper and what
+  the analysis files transcribe as not covered.
+- `PROGRAM/SOURCES.md`: S-0006 (the licence text, new); an addition to S-0001 with the terms of
+  the two stored files as retrieved this session. Until now SOURCES recorded no terms for the
+  stored Crossref record itself: an E10 gap, recorded as one.
+- `engine/Cargo.toml` and `lean/lakefile.toml`: one line each,
+  `license = "PolyForm-Noncommercial-1.0.0"`.
+- `PROGRAM/STATE.md`: the Licence bullet; the licence escalation closed and K16's two
+  questions opened; Blockers; the build line; the paragraph at the head of NEXT-SINGLE-ACTION.
+- This block.
+
+Verified before Al was shown anything: `bash scripts/check.sh` printed ALL GREEN on the tree
+with the two `license` lines; `Cargo.lock` and `lean/lake-manifest.json` are unchanged
+(`git status`); `git ls-files --eol` shows every new and changed text file `w/lf`; `LICENSE`
+from its third line on hashes to the digest of the retrieved text; the quoted blocks in
+ADR-0004 equal the corresponding lines of the files they are copied from, and the Required
+Notice and the contact line equal K15's words (checked by script).
+
+THE STOP, as ordered: before the commit. Al was shown ADR-0004 in full, the first lines of
+`LICENSE` and the README's Licence section, with a list of every other file changed. Put to him
+with them:
+- the eight readings in ADR-0004;
+- K16's two questions, with the facts: whether the stored copy of the paper stays in the tree,
+  and what in the analysis files is transcribed from it (ADR-0004, Context);
+- that P1.1 will write the paper's sign inventory, value domains and attested combinations
+  into Lean files, so his answer on the second question may bear on it;
+- that the first commit records the first part of his message only, and whether he wants that
+  otherwise.
+
+AL'S ANSWER (verbatim): his second message in the conversation, received 2026-11-22T21:01:00Z
+(the harness's record: record 726 of the same file, the second record of type `user` that
+holds a pasted message; turnPosition promptIndex 2 and turnIndex 2, origin human). Copied from
+that record by script. The harness delivered it inside a paste wrapper, which is not
+reproduced. It is 18 lines, and its paragraphs are single long lines, kept as he sent them.
+
+```text
+Accepted, with K17 and K18 below.
+
+K17 (the stored copy of the paper). It leaves the tree. I am going to ask the paper's authors, and it comes back only on my ruling. History is not rewritten: the commits that already hold the copy keep it. No other NC- or ND-licensed original is committed without my ruling.
+
+K18 (what the analysis files transcribe). It stays as it is, and P1.1 goes ahead. My SYNDEOM line on derived artifacts is not applied to KOBER: this program formalizes the paper's published result, and it states the paper's data and quotes its statements, with attribution, so that the formal statements can be checked against them. Whether that needs the authors' permission is my question and not the executor's, and I am asking them. I settle it before publication packaging (P4.3) or before I grant any commercial licence, whichever comes first. Until then a session quotes no more of the paper than checking a statement needs.
+
+The eight readings are accepted as written, the second included: the Lean package keeps its licence line. My message stays in two parts in HANDOFF. Write the pdftotext hazard to this program's memory file, and nothing else.
+
+First, the licence commit. Put K17 and K18 into ADR-0004 verbatim in place of its paragraph "Not decided here", and bring the ADR's Consequences, STATE and HANDOFF into line with them. Change nothing else that I was shown. The stored copy is still in the tree at this commit. Commit, push and confirm CI.
+
+Then prepare the removal as a commit of its own, and stop before you commit it.
+
+1. Copy the stored copy to C:\Users\LEET\KOBER-sources\S-0001, creating the directories and keeping the file's name, and check there that its SHA-256 is the one S-0001 records. Only then remove it from the tree. The Crossref record stays.
+2. Where the copy is cited, add and do not rewrite: a dated addition to S-0001, saying where the copy now is, that the digest and the address still pin what was read, and which commits still hold it; a dated line appended to each CLAIMS entry that cites the path, with no status changed and no existing line touched; one dated line under the header of each analysis file, and nothing else in those two files.
+3. Bring into line what would otherwise be untrue: the README's licence section; in STATE the Gate G0 row, the exam note that names the two stored files, the Licence bullet and the escalations; the sentence at the head of SOURCES about stored copies; and ADR-0004, by a dated amendment at its end that leaves its accepted text as it is.
+4. Record C:\Users\LEET\KOBER-sources in SOURCES and STATE as a local store that is not part of the repository. Nothing in it is committed.
+
+At the stop, list the files and show me every line you added or changed outside HANDOFF. Commit only when I answer "accepted"; then push, confirm CI and stop. P1.1 stays the next action.
+```
+
+AFTER THE ANSWER: the licence commit, on top of `8a01621`.
+- What differs between what Al was shown and what is committed, all of it on his order:
+  - ADR-0004: K17 and K18 verbatim in D2, in place of the paragraph "Not decided here"; two
+    bullets of its Consequences brought into line (third-party intake, which K17 adds a rule
+    to; K16's two questions, now ruled). The committed file was built from a copy of the file
+    as shown (SHA-256 60fdbd8f695882d489456670d4d346826f80d2ed1cc5d8007dbccf2ab5cd8707) by
+    those replacements and nothing else. In the second bullet the executor also corrected a
+    fact of its own (CONFUSIONS, below).
+  - `LICENSE`, README, SOURCES and the two manifests: byte for byte as they stood at the stop
+    (SHA-256 taken at the stop and compared before the commit).
+  - STATE: K17 and K18 verbatim in a section of their own; K16's two questions closed; the
+    removal opened as the one escalation; the authors' permission named as Al's question and
+    not the executor's; K18's rule beside NEXT-SINGLE-ACTION; the Licence bullet; Blockers.
+  - This block, from "AL'S ANSWER" on, and a few lines of the fields below that his answer
+    made untrue. The block's second part was written for the stop and had not been committed.
+- The eight readings are accepted as written, the second included. The message stays in two
+  parts.
+- Memory: one write, which his answer orders (MEMORY, below).
+- The dates in the README and in STATE stand: his answer came on 2026-11-22 UTC.
+- Verified before the commit: `bash scripts/check.sh` printed ALL GREEN on the tree of the
+  commit; `git ls-files --eol` shows every new and changed text file `w/lf`; the two verbatim
+  blocks that hold K17 and K18, and the block above, equal the corresponding lines of the one
+  script-made copy of his answer (checked by script).
+- The stored copy of the paper is still in the tree at this commit, as his answer says. Its
+  removal is what the session prepares next, as a commit of its own, and it stops before
+  committing it.
+
+§4.5 FIELDS, AT THE LICENCE COMMIT. The session goes on from this commit to prepare the removal
+that K17 orders. What that adds is recorded under these fields when it is committed.
+
+PHASE / GATE: Phase 1 — THEOREM / Gate G1 open, nothing done: no G1 criterion moved, and none
+  was meant to. Gate G0: the closing stands (K9 to K12).
+ADVANCED:
+- The memory disclosure first (ADR-0003 D2), by one run of one script that read the two memory
+  files and nothing else; then §4.1 ORIENT. `master` was at `00416bc` locally and on the
+  remote, the state Al ruled on.
+- First commit, `8a01621`: K9 to K14 verbatim in STATE; Al's judgment of the Gate G0 exam
+  closed; note 6 in ADR-0003 (K14); this block's first part. Pushed; CI green.
+- The licence (K15, K16): ADR-0004, `LICENSE`, README § Licence, S-0006, the terms of S-0001's
+  two stored files, two `license` lines, STATE. Shown to Al, accepted
+  with K17 and K18, and committed with them in place.
+- No CLAIMS transition: none was earned and none was owed. CLAIMS.md, the constitution,
+  ADR-0000 to 0002, the Lean and Rust sources, and everything under sources/ and analysis/ are
+  untouched.
+BELIEF DELTAS:
+- Session-start me took the stored paper's standing as settled: S-0001 and ADR-0000's addendum
+  say that an unmodified copy with attribution, shared non-commercially, is what its licence
+  allows. The legal code, read this session, has a second limb beside that one: Adapted
+  Material may be produced "but not Share[d]". Nothing in the repository had looked at the
+  analysis files under that limb. K16 points there. Evidence: the legal code's Section 2(a)(1)
+  as ADR-0004 quotes it. The executor made no judgment of it.
+- The analysis files hold more of the paper than "an extraction" suggests when counted: about
+  880 words in quotation marks in one file and about 200 in the other, against a paper of
+  about 11,100, with the counts of its Tables 1 and 2 and two tables of the readings it names
+  (17 and 23 rows).
+  Evidence: the script counts in ADR-0004.
+- SOURCES had no terms for the stored Crossref record. Evidence: S-0001 at `8a01621`. Crossref's
+  own page says "almost none" of its metadata is subject to copyright; the record holds no
+  abstract.
+- The stored PDF can be had again from where it came: the FLORE URL returned it byte for byte
+  on 2026-11-22. The digest and the URL in S-0001 are enough to find the same bytes again,
+  now that K17 takes the copy out of the tree.
+- The question the executor could not judge was Al's to take off the table, and he did it by
+  owning it: K18 keeps the transcriptions, sends P1.1 ahead and makes the authors' permission
+  his question, with one rule for sessions meanwhile (quote no more than checking a statement
+  needs). Evidence: his answer, below THE STOP.
+- The PolyForm repository's default branch is a branch named `1.0.0`, and its head was the
+  commit FRIEDMAN pinned earlier the same day. Three retrievals gave the same bytes.
+- Lake has a `license` field. Evidence: `PackageConfig` in the pinned toolchain's Lake source.
+- K10 and K14 made the disclosure simpler than Session 7's: the script read the two memory
+  files and no data file, and one run sufficed.
+- STATE's CI line lagged by one run again, as it says it does.
+CONFUSIONS:
+- The first build of the first commit compared §6's block with a trailing line feed and got
+  1,032 bytes and a digest unlike Session 7's. Caught before the commit, by comparing with
+  Session 7's record; the build now asserts that digest. Cost: one rebuild. No doc fix owed.
+- A URL for a Crossref page on metadata licences was guessed, not discovered (E7). It returned
+  a 327-byte stub. Nothing rests on it: the statement in S-0001 is from the REST API page,
+  which was fetched by its known address. A slip of the kind K11 names; the fix is the habit.
+- The first count of quoted passages paired quotation marks wrongly around one-character
+  readings in `analysis/R0.md`. Caught from its own output before any figure was used.
+- How to record a message whose first order is a commit "on its own". The session put lines 1
+  to 43 in the first commit and lines 45 to 68 with the licence. Cost: the message stands in
+  two parts in this block. Put to Al at the stop; his answer: it stays in two parts.
+- `pdftotext` writes Latin-1 on this machine unless told otherwise. The first count read its
+  output as UTF-8, and the built ADR showed a broken copyright sign in the paper's own
+  statement. Caught on reading the built file. The text was extracted again with `-enc UTF-8`
+  and the counts were made again; they rose, from 52 and 33 passages found to 53 and 38.
+  Cost: one rebuild. It is a machine hazard of the kind executor memory may hold. Put to Al
+  at the stop; his answer ordered it written to this program's memory file, and it was
+  (MEMORY, below).
+- One sentence of the ADR as Al was shown it was wrong in a fact: it said that CLAIM-0001 to
+  CLAIM-0003 cite the stored copy by path. CLAIM-0003 cites it as "the stored VOR (S-0001)",
+  without the path. Found when his answer asked for a line in each CLAIMS entry that cites
+  the path. The sentence stood in the Consequences bullet that his answer orders brought into
+  line, and the committed bullet names CLAIM-0001 and CLAIM-0002. Reported to Al.
+- A shell one-liner meant to edit the session's own templates carried backticks inside double
+  quotes, and the shell tried to run their contents as commands. Nothing ran and no file was
+  changed (the edit is written only after every anchor is found). The edits were made with
+  the file-editing tool.
+- The README's sentence "until 2026-11-22 UTC" names the day the licence commit is made. It
+  was written before Al's answer; the day was checked again at the commit.
+HONESTY CHECK: CLAIM-0001 to 0006 re-read. No transition, no downgrade. S-0001 and ADR-0000
+  say the stored copy's storage is compliant. This session neither confirms nor withdraws
+  that: it quotes the licence and put the question to Al, and D5 of ADR-0004 leaves the
+  earlier sentences as written. K17 and K18 are his answer, and the registers quote them and
+  add nothing to them. The counts of transcribed passages are a script's, made
+  against `pdftotext` output: the 2 passages it could not match, both figures in the first
+  file, were not checked against the page renders. The eight readings in ADR-0004 are labelled
+  as the executor's. Nothing entered a register from memory: every term and digest in S-0001's
+  addition and in S-0006 was retrieved this session.
+DRIFT CHECK: clean. Rulings, a licence and its record: no sound value, no claim about what any
+  tablet says. Scope refused: applying SYNDEOM's ruling to KOBER; touching sources/ or
+  analysis/ before Al ruled; starting P1.1; a byte check for PROGRAM/ in the gate; any memory
+  write but the one Al ordered; reading SYNDEOM's ADR-0010, which K15 does not name.
+NEXT-SINGLE-ACTION: see STATE.md. P1.1, unchanged: formalize the constraint system as Lean data
+  conditional on R0a, to the staged specification, read with Session 7's pointer and K13, and
+  bound by K18's rule on quoting.
+ESCALATIONS:
+- Al: the removal of the stored copy of the paper (K17). The session prepares it as a commit of
+  its own and commits it only on his answer "accepted". STATE lists it as the one open
+  escalation.
+- Al's, and not the executor's: whether what the analysis files transcribe needs the authors'
+  permission (K18). He is asking them. No session acts on it.
+- CI for the licence commit is confirmed by this session after the push. The repo's record of
+  it is made with the removal, or by the next session at ORIENT, as STATE's build line says.
+- Carried, not open: the CLAIM-0005/0006 sequencing caveat under the G1 table in STATE.
+STOP-REASON: none yet. The session has not stopped: it goes on to prepare the removal, and its
+  stop is recorded with that. Default branch green: the gate passes on the tree of this commit.
+MEMORY (K14; ADR-0003 note 6). One write, and Al's answer orders it: "Write the pdftotext hazard
+to this program's memory file, and nothing else." Made by script at 2026-11-22T21:03:55Z: 3
+lines appended to `project_kober.md`, at the end of its list of machine hazards. Nothing else in
+that file was changed, and no other memory file was written. The lines, copied by script from
+the record of the write:
+
+```text
+- poppler's `pdftotext` writes Latin-1 on this machine unless told otherwise; read as UTF-8, its
+  non-ASCII characters (the copyright sign, under-dotted signs) come out broken. Pass
+  `-enc UTF-8`.
+```
+
+The two memory files the disclosure covers, taken again by script at 2026-11-22T21:07:28Z:
+    MEMORY.md: 20042 bytes, modified 2026-11-22T01:46:57.731Z, SHA-256
+      7e74ab1cb3b2efcdda278cc9a7a3ca4b8674d2649bdf4f1609f7cd8b97d5d453
+      (as the disclosure records it)
+    project_kober.md: 2442 bytes, modified 2026-11-22T21:03:55.734Z, SHA-256
+      b881fe7d2953ea170bfa84c40770eaa514558f583a3d18cf460393e5a4b06fd9
+      (before the write: 2243 bytes, modified 2026-08-25T19:22:03.864Z, SHA-256
+      b093bc495be4bedc56f421c2cc6852dab6a66ab5b621a108cbf49112ed64f7d6,
+      as the disclosure records it; those 2243 bytes stand unchanged at the head of the file)
+No other memory file was opened at any point, and no other store.
