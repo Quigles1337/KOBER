@@ -333,3 +333,265 @@ STOP-REASON: blocker — this session is not cold by the ratified corollary; not
   can do advances G0. Repo green locally at this commit; its CI run is checked at the next
   ORIENT.
 ```
+
+---
+
+SESSION: 2026-11-22 UTC @ f94bec2 (Session 6 — an informed working session launched with Al's
+rulings K1–K8; not launched with the amended §6 Session-N prompt and not an exam. One commit
+carrying this entry, ADR-0003, the constitution edit and the STATE rewrite lands on top of
+`f94bec2`, made only after Al accepted what he was shown)
+
+FORM: from this block on, a HANDOFF block is plain text and is not wrapped in a code fence, as
+the blocks of Sessions 1 to 5 are. This block carries fenced verbatim text of its own, and so
+will every block that opens with a memory disclosure (ADR-0003, note 4).
+
+LAUNCH CONTEXT: the first turn of a new conversation; no turn preceded it. Received
+2026-11-22T19:18:40Z (the harness's record), in a session started in `C:\Users\LEET`, not in the
+repository directory. Al's whole message is reproduced below, copied by script from the
+harness's record of it. The harness had delivered it inside a paste wrapper, which is not part
+of the message and is not reproduced. The harness also loaded the executor's memory index into
+the session's context. This session makes no memory disclosure and reproduces no line of
+executor memory in this repository: Al's message says so, and the session was not launched with
+the Session-N prompt (K3). It opened no memory file and wrote no memory. It took the repo's
+location from the memory index's line for this program, which ADR-0003 D1 allows memory to
+hold. It built the state the exam will test, so it is **not cold** (K2), and it neither ran nor
+rehearsed the exam.
+
+AL'S MESSAGE (verbatim):
+
+```text
+You are the executor of the KOBER program. Read PROGRAM/KOBER-PROGRAM.md in full, then run the
+metacognitive loop (§4) exactly: ORIENT from the repo (state files are claims; builds are evidence),
+ASSESS, PLAN one thing, EXECUTE under the §1 constitution, VERIFY, RECORD+REFLECT per the §4.5
+schema, and stop clean per §4.6. Honor escalations — some decisions are Al's, not yours.
+
+Al's rulings follow. This session records them and makes the Gate G0 cold-start exam runnable. It
+does not run the exam: it builds the state the exam will test, so it is not cold. It makes no memory
+disclosure and reproduces no line of executor memory in this repository. I am ruling on the state at
+commit f94bec2. If master is anywhere else when you orient, stop and tell me.
+
+K1 (the memory ADR comes first). Write KOBER's memory-policy ADR in this session, as ADR-0003, the
+number STATE reserves. This replaces the sequencing STATE records: the ADR is written before the
+exam, not after it. Its decisions are the policy STATE records as ratified on 2026-08-25, D1 to D3
+and the corollary, as K2 to K4 amend them.
+
+K2 (the corollary). Your reading of its extension is right, and I ratify it in these words. A
+session running in the conversation context that built the state under test is not cold, whatever
+its memory holds, and its exam attempt does not count. A cold session is launched with the §6
+Session-N prompt verbatim and nothing that carries program state.
+
+K3 (disclosure first; amends D2 and the constitution's §6). Every session launched with the §6
+Session-N prompt makes the D2 disclosure, whether or not it will attempt a cold-start test, as the
+first entry of its HANDOFF block, before any action except reading the constitution and ADR-0003 in
+full and reading the memory it discloses. It appends the disclosure to PROGRAM/HANDOFF.md without
+reading that file's existing contents. Reason: a cold session learns that it is an exam only from
+STATE, after it has acted. FRIEDMAN adopted this order on 2026-11-22 UTC, and its Gate F0 exam
+passed under it.
+
+K4 (what a disclosure holds; amends D2). The disclosure covers the memory the harness loads for the
+session, and the session opens no other store. It reproduces verbatim every recalled line that names
+KOBER, FRIEDMAN, FR13DMAN or SYNDEOM, and this program's own memory file if the session recalls or
+opens it. Every other line is withheld and given by count: this repository is public, and a line
+about any other program is not this repository's to publish. A verbatim reproduction is copied from
+the file by script, never typed. The append opens PROGRAM/HANDOFF.md for appending without creating
+it, and asks the file system nothing else about it: no existence test and no size.
+
+K5 (the new §6 Session-N prompt). Replace the Session-N prompt in §6 with the text between the two
+marker lines below, verbatim and without the marker lines. Note the amendment in the constitution's
+header in the way FRIEDMAN's header notes its own, read at the commit K6 names.
+
+BEGIN SESSION-N PROMPT
+Before anything else, make the memory disclosure that ADR-0003 requires: read
+PROGRAM/KOBER-PROGRAM.md and PROGRAM/DECISIONS/ADR-0003.md in full, read the executor memory they
+tell you to disclose, and append the disclosure as the first entry of a new block at the end of
+PROGRAM/HANDOFF.md, whether or not this session will attempt a gate's cold-start test, and with no
+other command or file read first. Append it without reading HANDOFF's existing contents (a shell
+append or a script, not a file-editing tool that reads the file first), under a provisional block
+header that carries the UTC date and that you complete after orientation without changing the
+disclosure. You are the executor of the KOBER program. Having disclosed, run the metacognitive loop
+(§4) exactly: ORIENT from the repo (state files are claims; builds are evidence), ASSESS, PLAN one
+thing, EXECUTE under the §1 constitution, VERIFY, RECORD+REFLECT per the §4.5 schema, and stop clean
+per §4.6. Honor escalations — some decisions are Al's, not yours.
+END SESSION-N PROMPT
+
+K6 (FRIEDMAN's notes and exam procedure, fitted to KOBER). Read these at FR13DMAN commit
+2ffa3e7bd56087f79bdcfe4b9649e2d86844b305 and record that commit: in its ADR-0003, the five notes for
+the session making a disclosure; in its STATE, the cold-start exam procedure with its three readings
+and the notes of its Session 7, and my rulings A to D on that session. I accepted them for FRIEDMAN,
+and I will read your fitting of them before the commit. Put the notes for a disclosure in KOBER's
+ADR-0003 and the exam procedure in STATE. Where they name FRIEDMAN's gate, phase, checks or next
+action, use KOBER's. Step 1 of the exam protocol in STATE becomes this: the session has already made
+its disclosure; below it, without changing it, the session records the launching message it
+received, verbatim, and whether any turn preceded it; it records DISQUALIFIED and stops if the
+message carries anything beyond §6's text, or a prior turn exists, or any disclosed memory is
+program state, or the session is running in a conversation context that built this state. Steps 2
+and 3 stay as they are, except that the ADR is no longer owed after the exam.
+
+K7 (the pre-purge copies). In the executor memory directory that holds project_kober.md, which I
+believe is C:\Users\LEET\.claude\projects\C--Users-LEET\memory, delete MEMORY.md.bak,
+project_kober.md.bak and project_friedman.md.bak if they exist. Confirm that project_kober.md is in
+that directory before you touch anything. Do not open the three files. Record each one's name, size
+and SHA-256 before deleting it, and nothing about any other file there. This is a memory write that
+I order, and this session is not an exam. FRIEDMAN's Session 6 looked for the same three names on
+2026-11-22 UTC and found none of them; record what you find.
+
+K8 (launch directory). Where I launch a session from is my practice and not a condition of an exam.
+Record it in STATE.
+
+What to do, in order. Record these rulings verbatim: K1 to K6 in ADR-0003, and all of them in STATE
+and HANDOFF. Make the edits that K3 to K6 order. Carry out K7. Rewrite STATE for the result: the
+memory policy points to ADR-0003; the escalation about the pre-purge copies is closed with what you
+found; NEXT-SINGLE-ACTION is the exam, in a new conversation launched with the amended §6 Session-N
+prompt verbatim and nothing else.
+
+Then stop before you commit. Show me ADR-0003 in full and the complete diff of the constitution, and
+list every other file changed. Commit and push only when I answer "accepted". After the push,
+confirm that CI passes on the new tip, then end your last message with the amended §6 Session-N
+prompt in a code block, exactly as the constitution has it, so that I can launch the exam with it.
+```
+
+AL'S ANSWER TO WHAT HE WAS SHOWN (verbatim): his second message in the conversation, received
+2026-11-22T19:47:00Z (the harness's record) and copied from that record by script. The harness
+delivered it inside a paste wrapper, which is not reproduced. Its paragraphs are single long
+lines, kept as he sent them.
+
+```text
+Accepted, as shown, and no further stop.
+
+The eight places where your fitting departs from FRIEDMAN's text are accepted as written. On the fourth reading you read me rightly: a disqualified session stops the exam, completes and commits its HANDOFF block, and stops clean. Notes 5 to 7 on the steps stay as your notes. Rulings A to D stand here as you put them: precedent for calls of those kinds, not advance acceptance of a KOBER session's own.
+
+A line-ending check for PROGRAM/ in the gate can wait. I will ask for it if I want it.
+
+Commit, push, confirm CI, and end your last message with the amended §6 Session-N prompt in a code block, as ordered.
+```
+
+PHASE / GATE: Phase 0 — FOUNDATION / Gate G0 open on the cold-start test alone; not passed.
+ADVANCED:
+- ORIENT (§4.1): top level `C:/Users/LEET/KOBER`; `origin` =
+  `https://github.com/Quigles1337/KOBER.git`; `master` at `f94bec2` both locally and on the
+  remote (`git ls-remote origin`), which is the state Al ruled on; tree clean; `origin/HEAD` →
+  `refs/remotes/origin/master` without the fallback. `bash scripts/check.sh` → `ALL GREEN` at
+  `f94bec2` (Lean 4.33.1 build; 1/1 cargo test; clippy `-D warnings`). CI `check` `success` for
+  the tip `f94bec2` (run 32890264336, 2026-08-25T19:33:41Z; one job, `gate`, 10 steps). Read:
+  the constitution in full; STATE; HANDOFF, Sessions 1 to 5; CLAIMS for statuses (CLAIM-0001 to
+  0003 VERIFIED, CLAIM-0004 to 0006 UNKNOWN); ADR-0000, 0001 and 0002; `scripts/check.sh` and
+  the workflow. Checked beside them: both stored files under `sources/` reproduce the SHA-256s
+  in SOURCES.md S-0001; the `sorry`/`admit` scan of `lean/` matches one doc comment and nothing
+  else. STATE and the repo disagreed in one place, which is outside the repo: the pre-purge
+  memory copies (K7, below).
+- K1 to K6 recorded in **ADR-0003** (new file): the rulings verbatim; the policy STATE recorded
+  as ratified on 2026-08-25, copied by script from STATE at `f94bec2`; D1 to D3 and the
+  corollary as K2 to K4 amend them; five notes for the disclosing session, fitted from
+  FRIEDMAN's; a closing section that says what was taken from FRIEDMAN, at which commit, and
+  where KOBER's notes differ and why.
+- Constitution (K5): the §6 Session-N prompt replaced by the text between K5's marker lines, and
+  an **Amendments** line added to the header in the form FRIEDMAN's header uses. Nothing else in
+  it changed; the version string stays "v1.0" and the footer is as it was. SHA-256 at `f94bec2`
+  (17,736 bytes): `e913b14a427537ba17351b8b59bf66b429a1ef23a21aeecdbdbbaf9ed177e089`. SHA-256
+  with this commit (18,565 bytes):
+  `52a2914ed3c42addfc07fb37f0ba74b853c2b2750c45613a08530ebf4efeb2b5`.
+- K6, read at FR13DMAN commit `2ffa3e7bd56087f79bdcfe4b9649e2d86844b305`, the tip of that
+  repository's `main` on the remote today (`git ls-remote`): its ADR-0003 and its STATE in full;
+  its constitution's header and §6, with the diff that amended them; its HANDOFF Sessions 6 and
+  7, to learn what rulings A–D refer to and how its Session 6 recorded a session of this kind.
+  Its HANDOFF Session 8 was not read. The disclosure notes went into ADR-0003. The exam material
+  went into STATE: step 1 is now Al's text, steps 2 and 3 are as they were less the clause about
+  an ADR owed after the exam, and a new section carries the readings of step 1, seven notes on
+  the steps, and rulings A–D verbatim with what they mean here. Nothing was written in the
+  FR13DMAN working copy (`git status --porcelain` empty afterwards).
+- K7 carried out. `project_kober.md` was confirmed present in
+  `C:\Users\LEET\.claude\projects\C--Users-LEET\memory` before anything else was done there.
+  `MEMORY.md.bak`, `project_kober.md.bak` and `project_friedman.md.bak` were each **absent**: by
+  a Git Bash file test at 2026-11-22T19:21:04Z, and by a second method (.NET `File.Exists`, from
+  PowerShell 7.7.0) at 19:21:05Z. The same two tests found `project_kober.md`, so the absence
+  is not a check that failed quietly. Nothing existed to delete: nothing was deleted, nothing
+  was opened, and there is no size or SHA-256 to record. Nothing else in that directory was
+  listed, read or recorded.
+- K8 recorded in STATE. STATE rewritten for the result: the memory policy points to ADR-0003;
+  the pre-purge escalation is closed with what K7 found; NEXT-SINGLE-ACTION is the exam, in a
+  new conversation launched with the amended §6 Session-N prompt verbatim and nothing else. The
+  first five Gate G0 rows, the Gate G1 section, step 2 and the staged P1.1 text were carried
+  from STATE at `f94bec2` by script, unchanged.
+- Verified before Al was shown anything: `bash scripts/check.sh` → `ALL GREEN` on the edited
+  tree; `git ls-files --eol` shows no working file with a carriage return (the text files
+  `w/lf`; the stored one-line Crossref JSON `w/none`); the constitution's Session-N block
+  equals the text between K5's marker lines byte for byte; the constitution's diff touches
+  only the header and that block; the verbatim blocks in ADR-0003, STATE and this entry equal
+  the corresponding lines of the one script-made copy of Al's message; rulings A–D equal
+  FRIEDMAN's STATE at `2ffa3e7`; the new HANDOFF begins with the old HANDOFF's bytes unchanged;
+  CLAIMS.md, SOURCES.md and every file outside the four named here are untouched.
+- The stop, and Al's answer. Before any commit Al was shown ADR-0003 in full and the
+  constitution's complete diff. STATE and this entry were listed with a summary of each, as his
+  order asked, and the eight places where the fitting departs from FRIEDMAN's text were put to
+  him as a list. He accepted all of it as shown, with no change (his answer, above). ADR-0003
+  and the constitution are byte for byte what he was shown, and STATE is byte for byte what
+  stood in the tree when he answered (SHA-256 taken before the files were regenerated and
+  compared after). This entry was completed with his answer: the answer itself, this bullet,
+  and the two ESCALATIONS items that his answer settles. On the final tree
+  `bash scripts/check.sh` → `ALL GREEN` again, and the byte checks above were repeated.
+BELIEF DELTAS:
+- Session-start me read STATE's escalation about the three `.bak` files as a description of the
+  machine. It described 2026-08-25. On 2026-11-22 all three were gone. Evidence: the two tests
+  above, and FRIEDMAN's Session 6 finding the same earlier in the day. State files are claims,
+  and a claim about something outside the repo ages without a commit to show it.
+- FRIEDMAN's note on bytes could not be carried over as written. Its gate fails on a carriage
+  return in a `PROGRAM/` file; KOBER's gate looks at no `PROGRAM/` file. What KOBER has is
+  `.gitattributes`: in a scratch clone a CRLF append reached the index as LF and left the
+  working file mixed. Evidence: `git ls-files --eol` → `i/lf w/mixed` after `git add`, with the
+  warning "CRLF will be replaced by LF the next time Git touches it". ADR-0003's note 3 says
+  this, and tells the session to check its own bytes.
+- "A shell append" (the §6 prompt) and "without creating it" (K4) meet in fewer calls than I
+  expected. A bare `>>` created a missing file; so did Node's `fs.appendFileSync`. `dd` with
+  `conv=notrunc,nocreat oflag=append`, Python's `os.open` without `O_CREAT`, and Node's
+  `fs.openSync` with `O_WRONLY | O_APPEND` each failed on a missing file and created nothing.
+  Evidence: scratch tests this session (Python 3.11.9, Node 22.23.1, GNU bash 5.2.37,
+  coreutils 8.32). The calls are in ADR-0003's note 5, which a session reads before it appends.
+- Under disclosure-first, STATE's step 2 ("HANDOFF last entry") points at the exam session's own
+  provisional block. Step 2 stays as Al ordered; note 5 in STATE says which entry is meant.
+- KOBER's HANDOFF wrapped each block in a code fence. A block that opens with a disclosure
+  holds fenced text, and a fence cannot hold another. From this block on, blocks are plain text
+  (FORM, above; ADR-0003, note 4).
+- STATE's CI line lagged by one run, as it says it does: `f94bec2`'s own run had succeeded on
+  2026-08-25 and STATE still named `0e1ac18`.
+CONFUSIONS:
+- What "steps 2 and 3 stay as they are" leaves room for. FRIEDMAN's procedure has five steps
+  after standing and says things KOBER's two do not: what `git status` will show, the CI check,
+  the evidence links, what counts as a guess. I left the two steps' text alone and put those
+  points in notes marked as the executor's (STATE, notes 5 to 7). Cost: none. Put to Al before
+  the commit.
+- A `cd` into the FR13DMAN working copy moved the harness's working directory, and the next
+  command was held for a second review. FRIEDMAN's Session 6 recorded the same lesson and I
+  had not yet read it. Cost: one repeated call. Fix, used from then on: `git -C <path>` and
+  absolute paths for anything outside this repo.
+- A `grep -c` I ran to show that `scripts/check.sh` has no byte check counted lines that
+  matched ordinary letters. The claim in ADR-0003's note 3 rests on reading the script, which
+  is fourteen lines, not on that count.
+HONESTY CHECK: no CLAIM transition; CLAIMS.md is untouched, and its six statuses were re-read,
+  not re-derived. The cold-start row stays open and says "not passed". K7 is recorded as
+  "nothing to delete", not as a deletion. In ADR-0003 and STATE, Al's words sit in verbatim
+  blocks or marked quotations and the executor's are labelled as the executor's. Every
+  observation in ADR-0003's notes was made this session on this machine; none was carried from
+  FRIEDMAN's record, though each agreed with it. Nothing entered a register from memory.
+DRIFT CHECK: clean. The session was governance and documentation: no sound value, no claim about
+  what any tablet says. The live temptation was scope, and each item was refused: a disclosure
+  script in the repo; a byte check added to the gate; opening the program's memory file to see
+  what the exam session will find; a rehearsal of the exam, which K2 voids for a builder.
+NEXT-SINGLE-ACTION: see STATE.md — the Gate G0 cold-start exam, in a new conversation that Al
+  launches with the amended §6 Session-N prompt verbatim and nothing else. The directory he
+  launches it from is his practice (K8), not a condition of the exam.
+ESCALATIONS:
+- Al: launch the exam. The executor cannot create a cold session from inside a conversation.
+- Not open; recorded so that it is not reopened. The five notes in ADR-0003, the four readings
+  of step 1 and the seven notes on the steps in STATE are the executor's words, except where
+  they quote Al. He accepted them as written, with the eight places where the fitting departs
+  from FRIEDMAN's text (his answer, above). STATE calls the fourth reading of step 1 "KOBER's
+  own"; his answer confirms it in his words: a disqualified session stops the exam, completes
+  and commits its HANDOFF block, and stops clean. Rulings A to D stand in STATE as he accepted
+  them: precedent for calls of those kinds, not advance acceptance of a KOBER session's own.
+- Not open. KOBER's gate has no check on line endings in `PROGRAM/`, where FRIEDMAN's has one.
+  Al's answer: it can wait, and he will ask for it if he wants it. No session adds it unasked.
+- CI for this commit is confirmed by Session 6 after the push and reported to Al in the
+  conversation; the repo's record of it is made by the next session at ORIENT, as STATE's build
+  line says.
+STOP-REASON: blocker requiring Al — the next action is an exam that only a cold session can run,
+  and only Al can launch one. Default branch green.

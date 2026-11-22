@@ -6,6 +6,8 @@ explicitly enumerated reading set.
 **Named for:** Alice Kober, who built the method and never got the answer. She gets the engine.
 **Engineer of record:** Al (Quigles1337). **Executor:** Claude Code, running the loop in §4.
 **This file is the constitution.** It is read at the start of every session and changes only via ADR (§3.5).
+**Amendments:** ADR-0003 (2026-11-22 UTC, Session 6; Al's rulings of 2026-11-22 UTC) — the §6
+Session-N prompt, memory disclosure first in every session launched with that prompt.
 
 ---
 
@@ -259,10 +261,17 @@ then run the loop (§4) starting Phase 0. End with a complete HANDOFF entry per 
 
 ### Session N — resume
 ```
-You are the executor of the KOBER program. Read PROGRAM/KOBER-PROGRAM.md in full, then run the
-metacognitive loop (§4) exactly: ORIENT from the repo (state files are claims; builds are evidence),
-ASSESS, PLAN one thing, EXECUTE under the §1 constitution, VERIFY, RECORD+REFLECT per the §4.5
-schema, and stop clean per §4.6. Honor escalations — some decisions are Al's, not yours.
+Before anything else, make the memory disclosure that ADR-0003 requires: read
+PROGRAM/KOBER-PROGRAM.md and PROGRAM/DECISIONS/ADR-0003.md in full, read the executor memory they
+tell you to disclose, and append the disclosure as the first entry of a new block at the end of
+PROGRAM/HANDOFF.md, whether or not this session will attempt a gate's cold-start test, and with no
+other command or file read first. Append it without reading HANDOFF's existing contents (a shell
+append or a script, not a file-editing tool that reads the file first), under a provisional block
+header that carries the UTC date and that you complete after orientation without changing the
+disclosure. You are the executor of the KOBER program. Having disclosed, run the metacognitive loop
+(§4) exactly: ORIENT from the repo (state files are claims; builds are evidence), ASSESS, PLAN one
+thing, EXECUTE under the §1 constitution, VERIFY, RECORD+REFLECT per the §4.5 schema, and stop clean
+per §4.6. Honor escalations — some decisions are Al's, not yours.
 ```
 
 ---
